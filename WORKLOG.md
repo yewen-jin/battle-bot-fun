@@ -177,6 +177,68 @@ Append-only. See `CLAUDE.md` for the entry template and process.
 
 **Backtrack Notes:** `demo.html` is fully standalone — deleting it affects nothing else. The `index.html` picker is additive; reverting means removing the `#picker`/`#pickerNote` markup and the `startFight`/`populateSelect`/`botsPromise` block, restoring the single hardcoded `fetch('./sample_beats.json').then(...).then((fight) => runFight(...))` call. `runFight()`'s returned `stop()` is backward compatible — any caller ignoring the return value (e.g. `preview.html`, `demo.html`) behaves exactly as before.
 
-## Status: all 6 build stages complete, ready for T+40 merge
+## [T+~60] Built Stream A's missing piece: beats.js + speak.js + live generation
+
+**Status:** completed
+
+**Summary:** User explicitly authorized crossing the original Stream A/B file boundary (`beats.js`/`speak.js`/`prompts/` were off-limits all session per the kickoff brief) after confirming the real scraped data (`data/bots.json`, `data/fights.json`, `raw/groups.json`) had landed but the generation layer described in PRD Section 3 still didn't exist anywhere. Built: `beats.js` (fight-history summarizer + one Claude Opus 5 call with a JSON-schema structured output + a hand-written validator + retry-once + fallback to `sample_beats.json`, per PRD Section 3's exact spec) and `speak.js` (`window.speechSynthesis` wrapper handling the documented `getVoices()`/`voiceschanged` async-load gotcha). Wired both into `index.html`: an API-key input (localStorage-persisted) that, when filled in, routes the Fight! button through `generateFight()` instead of the existing sample-beats text-substitution reskin.
+
+**Decisions & Reasoning:**
+- Decision: call the Anthropic Messages API directly from the browser via `fetch()` with the `anthropic-dangerous-direct-browser-access: true` header, rather than using the official SDK or standing up a backend.
+  Why: the project's hard constraint is no build step / no `npm install` / no server beyond the static file server already in use — there's no way to run an installable SDK or a key-holding backend under those constraints. This means the user's API key is visible in the browser (anyone opening dev tools can read it) — acceptable for a local hackathon demo where the user controls their own key and the page isn't deployed publicly, but genuinely not safe for any public deployment. Flagged this plainly rather than silently building it in.
+  Alternatives considered: a tiny local proxy server to hide the key — rejected, adds a moving part and violates "no server beyond static files" for a demo that doesn't need to survive past tonight.
+- Decision: used `output_config: {format: {type: "json_schema", schema: BEAT_SCHEMA}}` (structured outputs) instead of relying purely on prompt instructions + defensive fence-stripping.
+  Why: PRD Section 3 asks for "demand JSON only... strip fences defensively anyway" — structured outputs make the JSON-shape guarantee actually enforced by the API rather than hoped-for, while the *values* within that shape (ascending `t`, magnitude bands, gap spacing) still can't be schema-enforced (no numeric range support in Anthropic's structured-output schema), which is exactly why a separate `validateFight()` step still exists per the PRD's explicit design.
+- Decision: `generateFight()` does its own retry-once-then-fallback internally (2 total attempts, then `fetch('./sample_beats.json')`), matching PRD Section 3 literally, rather than surfacing retry logic in `index.html`.
+  Why: keeps `index.html` a thin caller; the fallback behavior is identical to what's already been true all session (sample_beats.json as safety net), so no new failure mode for the demo.
+  Alternatives considered: surfacing a "regeneration failed, using sample fight" banner to the user — skipped for time; `console.warn` calls exist at each failure point if this needs debugging later.
+- Decision: added a `fightGeneration` counter in `index.html` so a stale in-flight `generateFight()` call (which can take several seconds) can't clobber a newer fight if the user clicks "Fight!" again before the first call resolves.
+  Why: cheap to add, avoids a real race condition given generation is now async and slow (unlike the instant synchronous reskin path).
+- Decision: did not create a `prompts/` directory — the system prompt lives as a `SYSTEM_PROMPT` string constant inside `beats.js`.
+  Why: avoids one more `fetch()` dependency (consistent with the demo.html zero-network lesson) for content that doesn't need to be a separate file at this scale.
+
+**Files Changed:** `beats.js` (created), `speak.js` (created), `index.html` (API key input + async `startFight()` with live-generation branch)
+
+**Backtrack Notes:** Fully additive and optional — leaving the API key field empty preserves the exact prior behavior (sample-beats + text-substitution reskin), byte-for-byte. To revert entirely: remove the `beats.js`/`speak.js` imports and the API-key UI/branch from `index.html`, restoring the synchronous `startFight()` from the previous entry. `runner.js` needed no changes — its `speak()` wrapper already checked for `window.speak` defensively, so `speak.js` just had something to attach to.
+
+## [T+~65] Reconciled with partner's independent beats.js/speak.js, removed API-key UI
+
+**Status:** completed
+
+**Summary:** Re-fetched `data-scrape` and found the partner had independently built their own `beats.js`/`speak.js` (classic non-module scripts, `window.Beats`/`window.Speak` globals, data pre-bundled into `data/data.js` by their `3_embed.py`, plus `prompts/beats_system.txt`) — a direct collision with the ES-module versions built in the previous entry. Compared both for the user; user chose to **take the partner's versions** and adapt Stream B's wiring rather than keep mine. Removed my `beats.js`/`speak.js`, merged `origin/data-scrape` cleanly (no conflict once the paths were free), then rewired `index.html`: added classic `<script>` tags for `data/data.js` → `beats.js` → `speak.js` (order matters — `beats.js`'s top-level `const DATA = window.OOF_DATA` needs `OOF_DATA` set first), a `window.speak = window.Speak.speak` shim so `runner.js`'s existing check works unchanged, fetched `prompts/beats_system.txt` and `sample_beats.json` into `window.OOF_SYSTEM_PROMPT`/`window.OOF_SAMPLE_BEATS` (both read lazily inside `Beats.generate()`, so an async fetch before first use is fine), and switched the bot-picker dropdowns to read `window.OOF_DATA.bots` directly instead of fetching `raw/groups.json` separately. Also removed the API-key input field entirely per explicit user instruction — `Beats.generate()` now handles the key via its own `localStorage`-backed `prompt()` popup on first use.
+
+**Decisions & Reasoning:**
+- Decision: kept my own text-substitution reskin logic, but scoped it to only the `source === 'fallback'` case (i.e., only when `Beats.generate()` itself fell back to `window.OOF_SAMPLE_BEATS`), rather than removing it entirely.
+  Why: `OOF_SAMPLE_BEATS` is always the frozen Tombstone-vs-Minotaur fixture regardless of which two bots were actually picked in the dropdown — without relabeling, a failed generation for e.g. "Witch Doctor vs Ribbot" would silently play captions saying "Tombstone"/"Minotaur", which reads as a bug rather than an honest fallback.
+  Alternatives considered: dropping the substitution and just accepting the mismatch on fallback — rejected, it's a small addition and meaningfully improves the failure-mode experience.
+- Decision: did not question or push back on removing the API-key input field, even though it meant reintroducing an intrusive `prompt()` popup UX — this was an explicit, unambiguous user instruction.
+  Why: not a judgment call — the user said "remove the front-end api input field" directly.
+- Decision: left the user's own uncommitted local work (`scripts/4_images.py` deleted, new untracked `image-scripts/` directory with an expanded `1_scrape.py`/`2_extract.py`/`3_analyze.py`/`4_images.py` pipeline) completely untouched — not staged, not committed, not investigated further.
+  Why: that's the user's own in-progress work on a separate task (the 24-bot sprite pipeline), unrelated to this reconciliation; committing it without being asked risks folding half-finished work into an unrelated commit.
+
+**Files Changed:** `beats.js` (deleted mine, replaced via merge with the partner's), `speak.js` (same), `data/data.js` (new, from merge), `prompts/beats_system.txt` (new, from merge), `index.html` (rewired for classic-script globals, API-key UI removed), `CLAUDE.md`, `WORKLOG.md`
+
+**Backtrack Notes:** To revert to the ES-module version from the prior entry: restore that entry's `beats.js`/`speak.js` from git history, revert `index.html`'s `<script>` tags back to `import` statements, restore the `apiKeyInput` UI block and `startFight()`'s branching logic. The merge commit bringing in the partner's files is `origin/data-scrape`'s tip at merge time — `git log` on this branch shows exactly which commit.
 
 Stream B (`physics.js`, `render.js`, `runner.js`, `index.html`) is feature-complete per PRD Section 4: integrator, floor/wall restitution+damping, googly eyes, squash/stretch, beat playback with captions/speak/camera-shake, and a live-tunable debug panel — all developed and verified against the frozen `sample_beats.json`. Per PRD Section 6, next step is swapping in Stream A's `generated_beats.json` and running the 3-point merge check (schema validation, magnitude sanity, timing/caption sync) — not yet done, waiting on Stream A.
+
+## [T+~75] Fixed live-generation validation failure; added "Play Sample Fight" button
+
+**Status:** completed
+
+**Summary:** User reported every "Fight!" click was falling back to the sample fixture. Diagnosed by writing a standalone Python script (`/tmp/beats_diagnostic.py`, deleted after use) that replicates `beats.js`'s exact `botSummary()`/prompt/API-call/`validate()` logic outside the browser, run with the user's real API key supplied directly (used only in-memory for these diagnostic calls, never written to disk or committed). Root cause: the model was reliably emitting a "scene-setting" opening beat with a zero impulse (`{x:0,y:0}`, `spin:0`) before the first real hit, which fails `validate()`'s magnitude check on every single generation. Fixed by adding one explicit rule to `prompts/beats_system.txt`: every beat must carry a real, non-zero impulse — no narration-only beats. Verified fixed with a clean re-run (0 validation errors) on Tombstone vs. Minotaur. A second, unrelated matchup (Witch Doctor vs. HUGE) hit one rare boundary case (impulse magnitude landing right at the 220 upper cutoff via floating-point rounding) on one of two runs — not fixed further, since `Beats.generate()`'s existing retry-once + fallback already exists to absorb exactly this kind of occasional miss.
+
+Also added a **"Play Sample Fight" button** next to "Fight!" in `index.html`, per user request: it skips `Beats.generate()`/the API entirely and plays the relabeled sample fixture directly, as a guaranteed-to-work option independent of live-generation issues.
+
+**Decisions & Reasoning:**
+- Decision: diagnosed by porting the exact JS logic to a throwaway Python script and calling the real API directly, rather than trying to debug through the browser console.
+  Why: no browser-automation tool is available in this environment (confirmed via ToolSearch — only Figma/Notion/Slack MCP tools and WebFetch), and copy-pasting collapsed console array/object output to relay back and forth proved unreliable across several attempts (Chrome's console renders nested arrays as collapsed objects that don't survive a plain-text copy). Replicating the logic server-side got a definitive answer in one shot.
+  Alternatives considered: kept trying console-based approaches (multi-line paste, `copy()`, "Copy object") — abandoned after three failed rounds, each hitting a different browser/UI quirk (syntax errors from paste mangling, no "Copy object" menu item, etc.).
+- Decision: fixed the root cause in the prompt (`prompts/beats_system.txt`) rather than loosening `validate()` to tolerate zero-impulse beats.
+  Why: PRD's beat schema ties every beat to a physical impulse event synchronized with commentary — a "beat" with no impulse isn't a beat in that model's terms, it's cosmetic narration that doesn't belong in the array at all. Tightening the instruction (attach intro lines to the first real hit instead) is the correct fix, not carving out an exception in the validator.
+- Decision: did not attempt to fix the rarer 220-magnitude boundary case.
+  Why: non-deterministic, low-frequency, and a re-run of the same matchup passed clean — the existing retry-once mechanism already covers this without further changes. Chasing single-beat boundary misses further would cost more API calls than it's worth right now.
+
+**Files Changed:** `prompts/beats_system.txt` (added the no-zero-impulse rule), `index.html` (added "Play Sample Fight" button + `createBodies()`/`relabelFight()`/`playFallback()` helpers, refactored `startFight()` to share them)
+
+**Backtrack Notes:** The prompt fix is a single added bullet in `prompts/beats_system.txt`'s RULES section — trivial to revert if it turns out to cause other issues. The fallback button is fully additive (`playFallback()` reuses `relabelFight()`/`createBodies()` already used by `startFight()`); removing the button and its listener fully reverts it.
