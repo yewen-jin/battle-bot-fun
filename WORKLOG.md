@@ -221,3 +221,24 @@ Append-only. See `CLAUDE.md` for the entry template and process.
 **Backtrack Notes:** To revert to the ES-module version from the prior entry: restore that entry's `beats.js`/`speak.js` from git history, revert `index.html`'s `<script>` tags back to `import` statements, restore the `apiKeyInput` UI block and `startFight()`'s branching logic. The merge commit bringing in the partner's files is `origin/data-scrape`'s tip at merge time — `git log` on this branch shows exactly which commit.
 
 Stream B (`physics.js`, `render.js`, `runner.js`, `index.html`) is feature-complete per PRD Section 4: integrator, floor/wall restitution+damping, googly eyes, squash/stretch, beat playback with captions/speak/camera-shake, and a live-tunable debug panel — all developed and verified against the frozen `sample_beats.json`. Per PRD Section 6, next step is swapping in Stream A's `generated_beats.json` and running the 3-point merge check (schema validation, magnitude sanity, timing/caption sync) — not yet done, waiting on Stream A.
+
+## [T+~75] Fixed live-generation validation failure; added "Play Sample Fight" button
+
+**Status:** completed
+
+**Summary:** User reported every "Fight!" click was falling back to the sample fixture. Diagnosed by writing a standalone Python script (`/tmp/beats_diagnostic.py`, deleted after use) that replicates `beats.js`'s exact `botSummary()`/prompt/API-call/`validate()` logic outside the browser, run with the user's real API key supplied directly (used only in-memory for these diagnostic calls, never written to disk or committed). Root cause: the model was reliably emitting a "scene-setting" opening beat with a zero impulse (`{x:0,y:0}`, `spin:0`) before the first real hit, which fails `validate()`'s magnitude check on every single generation. Fixed by adding one explicit rule to `prompts/beats_system.txt`: every beat must carry a real, non-zero impulse — no narration-only beats. Verified fixed with a clean re-run (0 validation errors) on Tombstone vs. Minotaur. A second, unrelated matchup (Witch Doctor vs. HUGE) hit one rare boundary case (impulse magnitude landing right at the 220 upper cutoff via floating-point rounding) on one of two runs — not fixed further, since `Beats.generate()`'s existing retry-once + fallback already exists to absorb exactly this kind of occasional miss.
+
+Also added a **"Play Sample Fight" button** next to "Fight!" in `index.html`, per user request: it skips `Beats.generate()`/the API entirely and plays the relabeled sample fixture directly, as a guaranteed-to-work option independent of live-generation issues.
+
+**Decisions & Reasoning:**
+- Decision: diagnosed by porting the exact JS logic to a throwaway Python script and calling the real API directly, rather than trying to debug through the browser console.
+  Why: no browser-automation tool is available in this environment (confirmed via ToolSearch — only Figma/Notion/Slack MCP tools and WebFetch), and copy-pasting collapsed console array/object output to relay back and forth proved unreliable across several attempts (Chrome's console renders nested arrays as collapsed objects that don't survive a plain-text copy). Replicating the logic server-side got a definitive answer in one shot.
+  Alternatives considered: kept trying console-based approaches (multi-line paste, `copy()`, "Copy object") — abandoned after three failed rounds, each hitting a different browser/UI quirk (syntax errors from paste mangling, no "Copy object" menu item, etc.).
+- Decision: fixed the root cause in the prompt (`prompts/beats_system.txt`) rather than loosening `validate()` to tolerate zero-impulse beats.
+  Why: PRD's beat schema ties every beat to a physical impulse event synchronized with commentary — a "beat" with no impulse isn't a beat in that model's terms, it's cosmetic narration that doesn't belong in the array at all. Tightening the instruction (attach intro lines to the first real hit instead) is the correct fix, not carving out an exception in the validator.
+- Decision: did not attempt to fix the rarer 220-magnitude boundary case.
+  Why: non-deterministic, low-frequency, and a re-run of the same matchup passed clean — the existing retry-once mechanism already covers this without further changes. Chasing single-beat boundary misses further would cost more API calls than it's worth right now.
+
+**Files Changed:** `prompts/beats_system.txt` (added the no-zero-impulse rule), `index.html` (added "Play Sample Fight" button + `createBodies()`/`relabelFight()`/`playFallback()` helpers, refactored `startFight()` to share them)
+
+**Backtrack Notes:** The prompt fix is a single added bullet in `prompts/beats_system.txt`'s RULES section — trivial to revert if it turns out to cause other issues. The fallback button is fully additive (`playFallback()` reuses `relabelFight()`/`createBodies()` already used by `startFight()`); removing the button and its listener fully reverts it.
