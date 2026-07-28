@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OOF: The BattleBots Pro League, Re-enacted Badly (demo copy — no network)</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: #111; color: #eee; font: 13px/1.4 monospace; display: flex; }
+  #stage { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px; flex: 1; min-width: 0; }
+  #canvasHost { max-width: 100%; }
+  #caption { white-space: pre; text-align: center; min-height: 2.4em; }
+  #panel { width: 280px; flex-shrink: 0; max-height: 100vh; overflow-y: auto; padding: 12px; background: #1a1a2e; box-sizing: border-box; }
+  #panel h2 { font-size: 13px; margin: 0 0 8px; }
+  .row { display: flex; flex-direction: column; margin-bottom: 6px; }
+  .row label { display: flex; justify-content: space-between; font-size: 11px; opacity: 0.85; }
+  .row input[type=range] { width: 100%; }
+  canvas { image-rendering: pixelated; max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="canvasHost"></div>
+  <div id="caption">loading…</div>
+</div>
+<div id="panel">
+  <h2>CONFIG (live)</h2>
+  <div id="sliders"></div>
+</div>
+
+<!--
+  Demo-safe copy of index.html: the fight data is inlined below instead of
+  fetched, so this page has zero network dependency at all — immune to a
+  flaky server, a wrong working directory, or file:// restrictions. This is
+  the actual fallback for tonight's presentation, not a placeholder.
+-->
+<script type="application/json" id="beats-data">
+{
+  "fight": { "a": "Tombstone", "b": "Minotaur", "winner": "a", "method": "KO" },
+  "beats": [
+    { "t": 0.6, "target": "b", "impulse": { "x": 55, "y": -24 }, "spin": 6, "shake": 0.2, "line": "Tombstone opens with a probing hit on Minotaur.", "fact": "Tombstone is a full-body spinner, one of the most feared in the league" },
+    { "t": 2.3, "target": "a", "impulse": { "x": -48, "y": -27 }, "spin": 5, "shake": 0.2, "line": "Minotaur answers, forks scraping Tombstone's shell." },
+    { "t": 4.0, "target": "b", "impulse": { "x": 60, "y": -25 }, "spin": 7, "shake": 0.2, "line": "Another glancing blow — Minotaur backs toward the wall." },
+    { "t": 5.9, "target": "a", "impulse": { "x": -70, "y": -85 }, "spin": 11, "shake": 0.5, "line": "Tombstone's bar connects square! Minotaur staggers.", "fact": "Tombstone's spinning bar can generate devastating hits" },
+    { "t": 7.6, "target": "b", "impulse": { "x": 50, "y": -29 }, "spin": 6, "shake": 0.2, "line": "Minotaur's lift catches nothing but empty air." },
+    { "t": 9.5, "target": "a", "impulse": { "x": -60, "y": -104 }, "spin": 13, "shake": 0.5, "line": "Minotaur gets under it — Tombstone is flipped!", "fact": "Minotaur's hydraulic forks are built to flip and self-right" },
+    { "t": 11.3, "target": "b", "impulse": { "x": 90, "y": -94 }, "spin": 14, "shake": 0.5, "line": "Tombstone rights itself and slams straight back in." },
+    { "t": 13.2, "target": "both", "impulse": { "x": 42, "y": -43 }, "spin": 6, "shake": 0.2, "line": "Both bots collide center-arena, no clear winner there." },
+    { "t": 15.0, "target": "a", "impulse": { "x": -55, "y": -29 }, "spin": 7, "shake": 0.2, "line": "Minotaur's forks skid harmlessly off Tombstone's armor." },
+    { "t": 16.9, "target": "b", "impulse": { "x": 100, "y": -90 }, "spin": 15, "shake": 0.5, "line": "Tombstone connects again — Minotaur wobbling badly.", "fact": "Tombstone is known for finishing fights quickly once it connects" },
+    { "t": 18.8, "target": "a", "impulse": { "x": -50, "y": -23 }, "spin": 5, "shake": 0.2, "line": "Tombstone shrugs off a weak counter-hit." },
+    { "t": 20.7, "target": "b", "impulse": { "x": 85, "y": -91 }, "spin": 13, "shake": 0.5, "line": "Another direct hit — Minotaur's drive looks damaged." },
+    { "t": 22.6, "target": "a", "impulse": { "x": -62, "y": -28 }, "spin": 8, "shake": 0.2, "line": "Minotaur tries to turtle up against the wall." },
+    { "t": 24.6, "target": "b", "impulse": { "x": 110, "y": -83 }, "spin": 16, "shake": 0.5, "line": "Tombstone drives Minotaur straight into the arena wall!", "fact": "Minotaur has weathered flips from spinners before" },
+    { "t": 26.6, "target": "both", "impulse": { "x": 70, "y": -72 }, "spin": 10, "shake": 0.5, "line": "Scramble at the wall — sparks and spinning metal." },
+    { "t": 28.6, "target": "b", "impulse": { "x": 120, "y": -72 }, "spin": 16, "shake": 0.5, "line": "Minotaur can barely turn to face the spinner now." },
+    { "t": 30.7, "target": "a", "impulse": { "x": -45, "y": -22 }, "spin": 4, "shake": 0.2, "line": "Tombstone circles, looking for the finishing angle." },
+    { "t": 32.8, "target": "b", "impulse": { "x": 95, "y": -89 }, "spin": 14, "shake": 0.5, "line": "One more hit like that and it's over for Minotaur." },
+    { "t": 34.9, "target": "b", "impulse": { "x": 115, "y": -77 }, "spin": 15, "shake": 0.5, "line": "Minotaur's drive train is failing before our eyes." },
+    { "t": 37.1, "target": "b", "impulse": { "x": 140, "y": -129 }, "spin": 26, "shake": 1.0, "line": "MASSIVE HIT! Tombstone launches Minotaur — that's a KO!", "fact": "Tombstone has one of the highest KO rates in BattleBots" }
+  ]
+}
+</script>
+
+<script type="module">
+import { CONFIG, createBody } from './physics.js';
+import { createCanvasPair, loadSprite } from './render.js';
+import { runFight } from './runner.js';
+
+const bodyA = createBody(60, 50, CONFIG.palette[1]);
+bodyA.name = 'Tombstone';
+const bodyB = createBody(100, 50, CONFIG.palette[5]);
+bodyB.name = 'Minotaur';
+const bodies = [bodyA, bodyB];
+
+for (const body of bodies) {
+  loadSprite(body.name).then((img) => { body.sprite = img; });
+}
+
+const pair = createCanvasPair(document.getElementById('canvasHost'));
+const captionEl = document.getElementById('caption');
+const targetMap = { a: [bodyA], b: [bodyB], both: [bodyA, bodyB] };
+
+const SLIDERS = [
+  ['gravity', 100, 800, 10],
+  ['floorRestitution', 0.1, 0.9, 0.01],
+  ['wallRestitution', 0.1, 0.9, 0.01],
+  ['groundDampingLinear', 0.3, 1.0, 0.01],
+  ['groundDampingAngular', 0.3, 1.0, 0.01],
+  ['botRadius', 3, 14, 0.5],
+  ['rotationQuantizeDeg', 1, 45, 1],
+  ['eyeStiffness', 10, 300, 5],
+  ['eyeDamping', 0, 40, 0.5],
+  ['eyeAccelGain', 0, 0.1, 0.001],
+  ['eyeClampRadius', 0.5, 5, 0.1],
+  ['eyeSocketRadius', 1, 5, 0.1],
+  ['pupilRadius', 0.3, 3, 0.1],
+  ['eyeOffsetX', 0, 6, 0.1],
+  ['eyeOffsetY', -6, 0, 0.1],
+  ['squashCoefficient', 0, 0.01, 0.0001],
+  ['squashMax', 0, 0.9, 0.01],
+  ['squashDecayRate', 1, 40, 1],
+  ['cameraShakeMax', 0, 40, 1],
+  ['cameraShakeDecayRate', 1, 40, 1],
+  ['speakLeadSeconds', 0, 0.5, 0.01],
+  ['renderFps', 4, 30, 1],
+];
+
+const slidersEl = document.getElementById('sliders');
+for (const [key, min, max, step] of SLIDERS) {
+  const row = document.createElement('div');
+  row.className = 'row';
+
+  const label = document.createElement('label');
+  const name = document.createElement('span');
+  name.textContent = key;
+  const value = document.createElement('span');
+  value.textContent = CONFIG[key];
+  label.append(name, value);
+
+  const input = document.createElement('input');
+  input.type = 'range';
+  input.min = min;
+  input.max = max;
+  input.step = step;
+  input.value = CONFIG[key];
+  input.addEventListener('input', () => {
+    CONFIG[key] = parseFloat(input.value);
+    value.textContent = input.value;
+  });
+
+  row.append(label, input);
+  slidersEl.append(row);
+}
+
+const fight = JSON.parse(document.getElementById('beats-data').textContent);
+runFight(fight, bodies, targetMap, pair, captionEl);
+</script>
+</body>
+</html>

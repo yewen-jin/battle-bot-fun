@@ -17,8 +17,10 @@ export function runFight(fight, bodies, targetMap, canvasPair, captionEl) {
   let accumulator = 0;
   let renderAccumulator = 0;
   let last = performance.now();
+  let stopped = false;
 
   function frame(now) {
+    if (stopped) return;
     const dt = Math.min((now - last) / 1000, 0.25);
     last = now;
     accumulator += dt;
@@ -60,4 +62,8 @@ export function runFight(fight, bodies, targetMap, canvasPair, captionEl) {
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+
+  return {
+    stop() { stopped = true; },
+  };
 }
