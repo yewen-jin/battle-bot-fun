@@ -156,6 +156,27 @@ Append-only. See `CLAUDE.md` for the entry template and process.
 
 **Backtrack Notes:** Self-contained new file; deleting it has no effect on anything else. If a specific slider misbehaves (e.g. `botRadius` dragged small enough that eyes sit outside the body), that's an expected interaction between independently-tunable values, not a bug — fix by also adjusting `eyeOffsetX/Y` in the same session.
 
+## [T+~50] .env created, demo.html (zero-network fallback), bot picker on index.html
+
+**Status:** completed
+
+**Summary:** Three things: (1) created a local `.env` from the already-merged `.env.example` (still gitignored, empty `BRIGHTDATA_API_KEY` for the user to fill in — `1_scrape.py` hasn't actually been run anywhere, confirmed by checking `data-scrape` branch, `main`, and local disk: no `raw/`, `data/`, or scraped output exists). (2) Built `demo.html` — a copy of `index.html` with `sample_beats.json`'s content inlined via `<script type="application/json">` instead of `fetch()`, so it has zero network dependency at all; this is the actual safety net for tonight, not `index.html` itself. (3) Added a bot picker (two `<select>`s + Fight! button) to `index.html`: tries `fetch('./raw/groups.json')` for the real 24-bot roster, falls back to `['Tombstone', 'Minotaur']` if that file doesn't exist (it doesn't, yet) — picking different names re-skins sprites/captions via simple string substitution (`beat.line`/`beat.fact`, `.split().join()`, not regex) since `sample_beats.json`'s actual impulse choreography is only authored for Tombstone vs. Minotaur. Added a small `runner.js` change (`runFight()` now returns `{ stop() }`) so `index.html` can cleanly kill the previous RAF loop before starting a new one on each "Fight!" click.
+
+**Decisions & Reasoning:**
+- Decision: `demo.html` is a separate file from `index.html`, not a mode/flag on the same file.
+  Why: keeps the zero-network guarantee absolute and easy to reason about — no risk of a code path in the "safe" demo file accidentally depending on `fetch()`. `index.html` keeps evolving (bot picker, future features); `demo.html` should stay frozen and boring.
+- Decision: bot-name substitution is plain `string.split(x).join(y)`, not a regex replace.
+  Why: avoids any regex-special-character risk if a real scraped bot name ever contains characters like `(`, `)`, `.` etc.
+- Decision: when the picked names aren't Tombstone/Minotaur, show a small note under the picker stating the choreography is still Tombstone-vs-Minotaur under the hood.
+  Why: the substitution is cosmetic only (captions/sprites), not a new generated fight — surfacing that plainly avoids the demo accidentally implying live generation that isn't happening.
+- Decision: `runFight()` returns a `stop()` handle rather than `index.html` reloading the whole page on each Fight! click.
+  Why: reload would also re-fetch `raw/groups.json`/`sample_beats.json` unnecessarily and reset the CONFIG sliders back to defaults, losing any live tuning — a small in-place stop/restart preserves both.
+- Decision: confirmed (again, via fresh `git fetch`) that no scraped data exists anywhere reachable — user had been told "all the data has been fetched" but this doesn't hold in this repo/environment. Flagged to user directly rather than silently proceeding as if it were true.
+
+**Files Changed:** `.env` (created, gitignored), `demo.html` (created), `index.html` (picker UI + `startFight()`/restart logic), `runner.js` (`runFight()` now returns `{ stop() }`)
+
+**Backtrack Notes:** `demo.html` is fully standalone — deleting it affects nothing else. The `index.html` picker is additive; reverting means removing the `#picker`/`#pickerNote` markup and the `startFight`/`populateSelect`/`botsPromise` block, restoring the single hardcoded `fetch('./sample_beats.json').then(...).then((fight) => runFight(...))` call. `runFight()`'s returned `stop()` is backward compatible — any caller ignoring the return value (e.g. `preview.html`, `demo.html`) behaves exactly as before.
+
 ## Status: all 6 build stages complete, ready for T+40 merge
 
 Stream B (`physics.js`, `render.js`, `runner.js`, `index.html`) is feature-complete per PRD Section 4: integrator, floor/wall restitution+damping, googly eyes, squash/stretch, beat playback with captions/speak/camera-shake, and a live-tunable debug panel — all developed and verified against the frozen `sample_beats.json`. Per PRD Section 6, next step is swapping in Stream A's `generated_beats.json` and running the 3-point merge check (schema validation, magnitude sanity, timing/caption sync) — not yet done, waiting on Stream A.
