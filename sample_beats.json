@@ -1,0 +1,171 @@
+{
+  "fight": { "a": "Tombstone", "b": "Minotaur", "winner": "a", "method": "KO" },
+  "beats": [
+    {
+      "t": 0.6,
+      "target": "b",
+      "impulse": { "x": 55, "y": -24 },
+      "spin": 6,
+      "shake": 0.2,
+      "line": "Tombstone opens with a probing hit on Minotaur.",
+      "fact": "Tombstone is a full-body spinner, one of the most feared in the league"
+    },
+    {
+      "t": 2.3,
+      "target": "a",
+      "impulse": { "x": -48, "y": -27 },
+      "spin": 5,
+      "shake": 0.2,
+      "line": "Minotaur answers, forks scraping Tombstone's shell."
+    },
+    {
+      "t": 4.0,
+      "target": "b",
+      "impulse": { "x": 60, "y": -25 },
+      "spin": 7,
+      "shake": 0.2,
+      "line": "Another glancing blow — Minotaur backs toward the wall."
+    },
+    {
+      "t": 5.9,
+      "target": "a",
+      "impulse": { "x": -70, "y": -85 },
+      "spin": 11,
+      "shake": 0.5,
+      "line": "Tombstone's bar connects square! Minotaur staggers.",
+      "fact": "Tombstone's spinning bar can generate devastating hits"
+    },
+    {
+      "t": 7.6,
+      "target": "b",
+      "impulse": { "x": 50, "y": -29 },
+      "spin": 6,
+      "shake": 0.2,
+      "line": "Minotaur's lift catches nothing but empty air."
+    },
+    {
+      "t": 9.5,
+      "target": "a",
+      "impulse": { "x": -60, "y": -104 },
+      "spin": 13,
+      "shake": 0.5,
+      "line": "Minotaur gets under it — Tombstone is flipped!",
+      "fact": "Minotaur's hydraulic forks are built to flip and self-right"
+    },
+    {
+      "t": 11.3,
+      "target": "b",
+      "impulse": { "x": 90, "y": -94 },
+      "spin": 14,
+      "shake": 0.5,
+      "line": "Tombstone rights itself and slams straight back in."
+    },
+    {
+      "t": 13.2,
+      "target": "both",
+      "impulse": { "x": 42, "y": -43 },
+      "spin": 6,
+      "shake": 0.2,
+      "line": "Both bots collide center-arena, no clear winner there."
+    },
+    {
+      "t": 15.0,
+      "target": "a",
+      "impulse": { "x": -55, "y": -29 },
+      "spin": 7,
+      "shake": 0.2,
+      "line": "Minotaur's forks skid harmlessly off Tombstone's armor."
+    },
+    {
+      "t": 16.9,
+      "target": "b",
+      "impulse": { "x": 100, "y": -90 },
+      "spin": 15,
+      "shake": 0.5,
+      "line": "Tombstone connects again — Minotaur wobbling badly.",
+      "fact": "Tombstone is known for finishing fights quickly once it connects"
+    },
+    {
+      "t": 18.8,
+      "target": "a",
+      "impulse": { "x": -50, "y": -23 },
+      "spin": 5,
+      "shake": 0.2,
+      "line": "Tombstone shrugs off a weak counter-hit."
+    },
+    {
+      "t": 20.7,
+      "target": "b",
+      "impulse": { "x": 85, "y": -91 },
+      "spin": 13,
+      "shake": 0.5,
+      "line": "Another direct hit — Minotaur's drive looks damaged."
+    },
+    {
+      "t": 22.6,
+      "target": "a",
+      "impulse": { "x": -62, "y": -28 },
+      "spin": 8,
+      "shake": 0.2,
+      "line": "Minotaur tries to turtle up against the wall."
+    },
+    {
+      "t": 24.6,
+      "target": "b",
+      "impulse": { "x": 110, "y": -83 },
+      "spin": 16,
+      "shake": 0.5,
+      "line": "Tombstone drives Minotaur straight into the arena wall!",
+      "fact": "Minotaur has weathered flips from spinners before"
+    },
+    {
+      "t": 26.6,
+      "target": "both",
+      "impulse": { "x": 70, "y": -72 },
+      "spin": 10,
+      "shake": 0.5,
+      "line": "Scramble at the wall — sparks and spinning metal."
+    },
+    {
+      "t": 28.6,
+      "target": "b",
+      "impulse": { "x": 120, "y": -72 },
+      "spin": 16,
+      "shake": 0.5,
+      "line": "Minotaur can barely turn to face the spinner now."
+    },
+    {
+      "t": 30.7,
+      "target": "a",
+      "impulse": { "x": -45, "y": -22 },
+      "spin": 4,
+      "shake": 0.2,
+      "line": "Tombstone circles, looking for the finishing angle."
+    },
+    {
+      "t": 32.8,
+      "target": "b",
+      "impulse": { "x": 95, "y": -89 },
+      "spin": 14,
+      "shake": 0.5,
+      "line": "One more hit like that and it's over for Minotaur."
+    },
+    {
+      "t": 34.9,
+      "target": "b",
+      "impulse": { "x": 115, "y": -77 },
+      "spin": 15,
+      "shake": 0.5,
+      "line": "Minotaur's drive train is failing before our eyes."
+    },
+    {
+      "t": 37.1,
+      "target": "b",
+      "impulse": { "x": 140, "y": -129 },
+      "spin": 26,
+      "shake": 1.0,
+      "line": "MASSIVE HIT! Tombstone launches Minotaur — that's a KO!",
+      "fact": "Tombstone has one of the highest KO rates in BattleBots"
+    }
+  ]
+}
