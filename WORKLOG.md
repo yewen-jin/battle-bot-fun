@@ -242,3 +242,26 @@ Also added a **"Play Sample Fight" button** next to "Fight!" in `index.html`, pe
 **Files Changed:** `prompts/beats_system.txt` (added the no-zero-impulse rule), `index.html` (added "Play Sample Fight" button + `createBodies()`/`relabelFight()`/`playFallback()` helpers, refactored `startFight()` to share them)
 
 **Backtrack Notes:** The prompt fix is a single added bullet in `prompts/beats_system.txt`'s RULES section — trivial to revert if it turns out to cause other issues. The fallback button is fully additive (`playFallback()` reuses `relabelFight()`/`createBodies()` already used by `startFight()`); removing the button and its listener fully reverts it.
+
+## [T+~85] Built the Pro League image scraper, fixed a zero-zone Bright Data account
+
+**Status:** completed
+
+**Summary:** Built `image-scripts/5_proleague_images.py` to scrape `https://battlebots.com/proleague/` for every `<img>` tag's URL + surrounding metadata (alt, title, nearest `<figcaption>`, nearest preceding heading for section context, page URL) — one row per image, output to both `raw/proleague_images.csv` and `.json`. Researched "Bright Data Studio" first: confirmed it's Bright Data's Scraper Studio product, which requires a pre-built Collector (configured through their web IDE) — not something scriptable cold without first creating a collector by hand. User chose to skip Studio and reuse the Web Unlocker pattern already proven in `1_scrape.py`/`image-scripts/1_scrape.py` instead. First run failed with `zone "web_unlocker1" not found` — turned out this Bright Data account had **zero zones configured at all** (`GET /zone/get_active_zones` returned `[]`). Creating one via `POST /zone` first failed with a 403 (API key lacked Admin/Ops permission); user fixed the key's role and rotated it; retried and the zone created successfully. Scraper then ran clean: 30 images found, one filtered out (a Facebook tracking pixel, not real content) → 29 real images in the final output.
+
+**Decisions & Reasoning:**
+- Decision: reused the existing `unlock()` / Web Unlocker POST-to-`/request` pattern from `1_scrape.py` rather than building against Scraper Studio's collector API.
+  Why: user's explicit choice after being told Scraper Studio needs a pre-configured Collector ID that doesn't exist for this page — the Web Unlocker approach needed zero new Bright Data setup beyond a working zone (which turned out to be the actual blocker anyway).
+  Alternatives considered: building a Scraper Studio collector via their AI-agent-assisted web IDE — rejected as a manual, out-of-band step with no API entry point to do it cold.
+- Decision: created the missing zone via Bright Data's `POST /zone` API (`plan.type: "unblocker"`) rather than asking the user to click through their dashboard, once they explicitly confirmed and fixed the permission issue.
+  Why: user's explicit "create a zone based on API" instruction, after being warned this is a real account-level change (not local/reversible-by-me) and given the dashboard alternative.
+- Decision: named the new zone `web_unlocker1` (matching the pre-existing `.env`/`.env.example` value) rather than picking a new name.
+  Why: zero code changes needed elsewhere — every existing script already reads that exact zone name.
+- Decision: filtered out known analytics/tracking-pixel domains (`facebook.com/tr`, Google Analytics, Doubletree, GTM) from the results rather than leaving every raw `<img>` tag in.
+  Why: a 1x1 Facebook conversion-tracking pixel isn't a "real" content image by any reasonable reading of "extract all image URLs" — false-positive noise, not signal.
+- Decision: prefer `data-src`/`data-lazy-src`/`data-original`/`data-srcset` over a bare `src` attribute when resolving each image's URL.
+  Why: many modern sites (this one included, WordPress + lazy-loading) put a placeholder/blur-up image in `src` and the real URL in a `data-*` attribute — reading `src` alone would return placeholder URLs, not the actual images.
+
+**Files Changed:** `image-scripts/5_proleague_images.py` (created), `raw/proleague_images.csv` (created), `raw/proleague_images.json` (created). Also: created a new Bright Data zone named `web_unlocker1` on the user's Bright Data account (external side effect, not a repo file, but recorded here since it's load-bearing for this and every other Web Unlocker-based script in the repo going forward).
+
+**Backtrack Notes:** The scraper is a standalone, additive script — deleting it and its two `raw/` outputs fully reverts this entry. The Bright Data zone is external infrastructure, not something `git revert` touches — if it needs to be removed, that's a dashboard/API action on Bright Data's side, not a code change.
