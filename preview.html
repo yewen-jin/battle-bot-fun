@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Stream B preview — physics + render + runner</title>
+<style>
+  body { background: #222; color: #eee; font: 14px monospace; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  #caption { white-space: pre; text-align: center; }
+</style>
+</head>
+<body>
+<div id="caption">loading…</div>
+<script type="module">
+import { CONFIG, createBody } from './physics.js';
+import { createCanvasPair, loadSprite } from './render.js';
+import { runFight } from './runner.js';
+
+const bodyA = createBody(60, 50, CONFIG.palette[1]);
+bodyA.name = 'Tombstone';
+const bodyB = createBody(100, 50, CONFIG.palette[5]);
+bodyB.name = 'Minotaur';
+const bodies = [bodyA, bodyB];
+
+for (const body of bodies) {
+  loadSprite(body.name).then((img) => { body.sprite = img; });
+}
+
+const pair = createCanvasPair(document.body);
+const captionEl = document.getElementById('caption');
+const targetMap = { a: [bodyA], b: [bodyB], both: [bodyA, bodyB] };
+
+fetch('./sample_beats.json')
+  .then((res) => res.json())
+  .then((fight) => runFight(fight, bodies, targetMap, pair, captionEl));
+</script>
+</body>
+</html>
