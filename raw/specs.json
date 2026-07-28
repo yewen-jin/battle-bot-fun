@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Manta",
+    "weight_class": "243lbs (BB FaceOffs) [ 1 ] 230lbs (BB Proving Ground) [ 2 ]",
+    "team": "Team Tanto Robotics",
+    "weapon_type": "Eggbeater drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Manta"
+  },
+  {
+    "name": "Terrortops",
+    "weight_class": "250lbs",
+    "team": "Team Terrortops",
+    "weapon_type": "Vertical spinner Lifter",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Terrortops"
+  },
+  {
+    "name": "Valkyrie",
+    "weight_class": "250lbs",
+    "team": "Team VALKYRIE (WC VI-Present) Team Questionable Designs (WC III-WC V)",
+    "weapon_type": "Undercutter spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Valkyrie"
+  },
+  {
+    "name": "Skorpios",
+    "weight_class": "~250lbs",
+    "team": "Bot Bash Party Crew (formerly Offbeat Robotics )",
+    "weapon_type": "Articulating overhead saw Hammer saw (WC IV-Present) Articulating flamethrower fangs (WC V) Overhead flamethrower (WC VII-Present) Overhead swinging knife (WC VII-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Skorpios"
+  },
+  {
+    "name": "MadCatter",
+    "weight_class": "250lbs",
+    "team": "Team Bad Kitty",
+    "weapon_type": "Vertical spinner Axe (WC IV-BB: Bounty Hunters) Lifting arm (WC IV-WC VII)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/MadCatter"
+  },
+  {
+    "name": "Magnitude",
+    "weight_class": "220-250lbs",
+    "team": "Team Wazio",
+    "weapon_type": "Eggbeater drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Magnitude"
+  },
+  {
+    "name": "Disarray",
+    "weight_class": "250lbs",
+    "team": "Wildcat Robotics (a.k.a. Team 22037)",
+    "weapon_type": "Vertical drisk spinner Vertical disk spinner (Proving Ground 2024-Present) Flamethrower (Proving Ground 2025-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Disarray"
+  },
+  {
+    "name": "Tombstone",
+    "weight_class": "220lbs (Pro Championship 2009) 250lbs (WC I-Present) 340lbs (NPC Charity Open)",
+    "team": "Hardcore Robotics",
+    "weapon_type": "Horizontal bar spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Tombstone"
+  },
+  {
+    "name": "Copperhead",
+    "weight_class": "250lbs",
+    "team": "Team Copperhead (formerly Caustic Creations )",
+    "weapon_type": "Eggbeater drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Copperhead"
+  },
+  {
+    "name": "The Twins",
+    "weight_class": null,
+    "team": "Seems Reasonable Robotics",
+    "weapon_type": "2x Vertical spinners",
+    "wiki_url": "https://battlebots.fandom.com/wiki/The_Twins"
+  },
+  {
+    "name": "Cobalt",
+    "weight_class": null,
+    "team": "Robotic Death Company (WC VI-Present) Team Carbide (WC II, WC IV)",
+    "weapon_type": "Horizontal spinner (WC II) Vertical spinner (WC IV-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Cobalt"
+  },
+  {
+    "name": "JackPot",
+    "weight_class": "243-250lbs",
+    "team": "Vegas Combat Robotics",
+    "weapon_type": "Vertical spinner Lifting forks (WC VII-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/JackPot"
+  },
+  {
+    "name": "Malice",
+    "weight_class": "250lbs",
+    "team": "Team Malice",
+    "weapon_type": "Horizontal drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Malice"
+  },
+  {
+    "name": "Golden Fury",
+    "weight_class": "242lbs (WC V)",
+    "team": "PY Roboticzs",
+    "weapon_type": "Vertical spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Golden_Fury"
+  },
+  {
+    "name": "DeathRoll",
+    "weight_class": "243-250lbs",
+    "team": "Team DeathRoll",
+    "weapon_type": "Vertical spinning disk",
+    "wiki_url": "https://battlebots.fandom.com/wiki/DeathRoll"
+  },
+  {
+    "name": "End Game",
+    "weight_class": "250lbs",
+    "team": "Team End Game (formerly OYES Robotics)",
+    "weapon_type": "Vertical spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/End_Game"
+  },
+  {
+    "name": "HUGE",
+    "weight_class": "250lbs",
+    "team": "Team HUGE",
+    "weapon_type": "Vertical bar spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/HUGE"
+  },
+  {
+    "name": "Minotaur",
+    "weight_class": "230-250lbs",
+    "team": "Team RioBotz",
+    "weapon_type": "Drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Minotaur"
+  },
+  {
+    "name": "Bloodsport",
+    "weight_class": "247-250lbs",
+    "team": "Bots 'n' Stuff Robotics",
+    "weapon_type": "Horizontal spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Bloodsport"
+  },
+  {
+    "name": "HyperShock",
+    "weight_class": "238-250lbs",
+    "team": "Team HyperShock (formerly Shenanigans & Co.)",
+    "weapon_type": "Vertical spinner Hydraulic arms (WC I) Lifting wedges (WC II)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/HyperShock"
+  },
+  {
+    "name": "Witch Doctor",
+    "weight_class": "250lbs (WC I-Present) 120lbs (BotsIQ 2010-BotsIQ 2011)",
+    "team": "Team Witch Doctor (formerly Busted Nuts Robotics)",
+    "weapon_type": "Vertical disk spinner Vertical drisk spinner (WC II-Present) Flamethrower",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Witch_Doctor"
+  },
+  {
+    "name": "Switchback",
+    "weight_class": null,
+    "team": "Team Midnight Invention",
+    "weapon_type": "Articulating eggbeater spinner (WC VII-Present) Articulating drum spinner (WC VI-BB: Champions I)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Switchback"
+  },
+  {
+    "name": "Ribbot",
+    "weight_class": "250lbs",
+    "team": "Team Ribbot (formerly Team WPI)",
+    "weapon_type": "Vertical disk spinner Horizontal undercutter Vertical bar spinner Lifter (WC IV) Eggbeater spinner (BB BB Pro League)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Ribbot"
+  },
+  {
+    "name": "Orbitron",
+    "weight_class": "250lbs",
+    "team": "Team Orbitron",
+    "weapon_type": "Twin vertical spinners",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Orbitron"
+  }
+]

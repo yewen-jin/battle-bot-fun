@@ -1,0 +1,184 @@
+{
+  "season": 2026,
+  "groups": {
+    "Group A": [
+      "Manta",
+      "Terrortops",
+      "Valkyrie",
+      "Skorpios"
+    ],
+    "Group B": [
+      "MadCatter",
+      "Magnitude",
+      "Disarray",
+      "Tombstone"
+    ],
+    "Group C": [
+      "Copperhead",
+      "The Twins",
+      "Cobalt",
+      "JackPot"
+    ],
+    "Group D": [
+      "Malice",
+      "Golden Fury",
+      "DeathRoll",
+      "End Game"
+    ],
+    "Group E": [
+      "HUGE",
+      "Minotaur",
+      "Bloodsport",
+      "HyperShock"
+    ],
+    "Group F": [
+      "Witch Doctor",
+      "Switchback",
+      "Ribbot",
+      "Orbitron"
+    ]
+  },
+  "bots": [
+    "Bloodsport",
+    "Cobalt",
+    "Copperhead",
+    "DeathRoll",
+    "Disarray",
+    "End Game",
+    "Golden Fury",
+    "HUGE",
+    "HyperShock",
+    "JackPot",
+    "MadCatter",
+    "Magnitude",
+    "Malice",
+    "Manta",
+    "Minotaur",
+    "Orbitron",
+    "Ribbot",
+    "Skorpios",
+    "Switchback",
+    "Terrortops",
+    "The Twins",
+    "Tombstone",
+    "Valkyrie",
+    "Witch Doctor"
+  ],
+  "matchups": [
+    {
+      "episode": "Episode 1",
+      "bot_a": "Golden Fury",
+      "bot_b": "DeathRoll"
+    },
+    {
+      "episode": "Episode 1",
+      "bot_a": "HUGE",
+      "bot_b": "HyperShock"
+    },
+    {
+      "episode": "Episode 1",
+      "bot_a": "Malice",
+      "bot_b": "End Game"
+    },
+    {
+      "episode": "Episode 2",
+      "bot_a": "Copperhead",
+      "bot_b": "JackPot"
+    },
+    {
+      "episode": "Episode 2",
+      "bot_a": "Skorpios",
+      "bot_b": "Manta"
+    },
+    {
+      "episode": "Episode 2",
+      "bot_a": "Tombstone",
+      "bot_b": "MadCatter"
+    },
+    {
+      "episode": "Episode 3",
+      "bot_a": "Magnitude",
+      "bot_b": "Disarray"
+    },
+    {
+      "episode": "Episode 3",
+      "bot_a": "Valkyrie",
+      "bot_b": "Terrortops"
+    },
+    {
+      "episode": "Episode 4",
+      "bot_a": "The Twins",
+      "bot_b": "Cobalt"
+    },
+    {
+      "episode": "Episode 4",
+      "bot_a": "Minotaur",
+      "bot_b": "Bloodsport"
+    },
+    {
+      "episode": "Episode 4",
+      "bot_a": "Witch Doctor",
+      "bot_b": "Orbitron"
+    },
+    {
+      "episode": "Episode 5",
+      "bot_a": "Copperhead",
+      "bot_b": "Cobalt"
+    },
+    {
+      "episode": "Episode 5",
+      "bot_a": "HyperShock",
+      "bot_b": "Bloodsport"
+    },
+    {
+      "episode": "Episode 5",
+      "bot_a": "Tombstone",
+      "bot_b": "Disarray"
+    },
+    {
+      "episode": "Episode 6",
+      "bot_a": "Ribbot",
+      "bot_b": "Witch Doctor"
+    },
+    {
+      "episode": "Episode 6",
+      "bot_a": "HUGE",
+      "bot_b": "Minotaur"
+    },
+    {
+      "episode": "Episode 6",
+      "bot_a": "DeathRoll",
+      "bot_b": "Malice"
+    },
+    {
+      "episode": "Episode 7",
+      "bot_a": "End Game",
+      "bot_b": "Golden Fury"
+    },
+    {
+      "episode": "Episode 7",
+      "bot_a": "Manta",
+      "bot_b": "Valkyrie"
+    },
+    {
+      "episode": "Episode 7",
+      "bot_a": "Magnitude",
+      "bot_b": "MadCatter"
+    },
+    {
+      "episode": "Episode 8",
+      "bot_a": "JackPot",
+      "bot_b": "The Twins"
+    },
+    {
+      "episode": "Episode 8",
+      "bot_a": "Skorpios",
+      "bot_b": "Terrortops"
+    },
+    {
+      "episode": "Episode 8",
+      "bot_a": "Switchback",
+      "bot_b": "Orbitron"
+    }
+  ]
+}
