@@ -22,8 +22,7 @@ BRIGHTDATA_API_KEY = os.environ["BRIGHTDATA_API_KEY"]
 BRIGHTDATA_ZONE = os.environ.get("BRIGHTDATA_ZONE", "web_unlocker1")
 BRIGHTDATA_ENDPOINT = "https://api.brightdata.com/request"
 
-# TODO: fill from the 2026 Pro League roster/fight-card page (matchups, not outcomes)
-ROSTER_URL = "https://battlebots.fandom.com/wiki/2026_Pro_League"  # placeholder, verify
+ROSTER_URL = "https://battlebots.fandom.com/wiki/BattleBots_Pro_League"
 
 # TODO: fill once roster is scraped - canonical bot names as they appear on RCE
 BOTS = []
@@ -56,16 +55,43 @@ def slugify(bot_name: str) -> str:
 
 
 def scrape_roster() -> dict:
-    """Parse the 2026 fight-card page: 24 canonical bot names (+ groups if listed)."""
+    """Parse the Pro League page: 24 bots in 6 group tables, plus episode matchups.
+
+    Group standings tables are `.mw-collapsible` under "Group A".."Group F" headings;
+    matchup tables are `.article-table` under episode headings. Records/positions are
+    deliberately dropped (spoiler ban) - only names, groups, and matchups are kept.
+    """
+    import re
+
     html = brightdata_get(ROSTER_URL)
     soup = BeautifulSoup(html, "lxml")
+    content = soup.select_one(".mw-parser-output")
 
-    # TODO: real selector once the page HTML is inspected
-    bots = []
-    for el in soup.select("TODO-selector-for-bot-names"):
-        bots.append(el.get_text(strip=True))
+    groups = {}
+    matchups = []
+    for table in content.select("table"):
+        cls = table.get("class") or []
+        heading = table.find_previous(["h2", "h3", "h4"])
+        hname = heading.get_text(strip=True).replace("[]", "").strip() if heading else ""
+        if "mw-collapsible" in cls and re.match(r"^Group [A-F]$", hname):
+            groups[hname] = [
+                row.select("td")[1].get_text(strip=True)
+                for row in table.select("tr")
+                if len(row.select("td")) >= 2
+            ]
+        elif "article-table" in cls:
+            for row in table.select("tr"):
+                text = row.get_text(" ", strip=True)
+                if "TBC" in text or "vs" not in text:
+                    continue
+                parts = text.split("vs.")
+                if len(parts) == 2:
+                    matchups.append(
+                        {"episode": hname or None, "bot_a": parts[0].strip(), "bot_b": parts[1].strip()}
+                    )
 
-    return {"season": 2026, "bots": bots}
+    bots = sorted({b for bs in groups.values() for b in bs})
+    return {"season": 2026, "groups": groups, "bots": bots, "matchups": matchups}
 
 
 def scrape_bot_specs(bot_name: str) -> dict:

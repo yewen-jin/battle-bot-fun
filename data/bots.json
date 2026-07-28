@@ -1,0 +1,412 @@
+[
+  {
+    "name": "Bloodsport",
+    "weight_class": "247-250lbs",
+    "team": "Bots 'n' Stuff Robotics",
+    "weapon_type": "Horizontal spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Bloodsport",
+    "group": "Group E",
+    "record": {
+      "wins": 14,
+      "losses": 10,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 10,
+      "Judges' Decision": 4
+    }
+  },
+  {
+    "name": "Cobalt",
+    "weight_class": null,
+    "team": "Robotic Death Company (WC VI-Present) Team Carbide (WC II, WC IV)",
+    "weapon_type": "Horizontal spinner (WC II) Vertical spinner (WC IV-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Cobalt",
+    "group": "Group C",
+    "record": {
+      "wins": 15,
+      "losses": 12,
+      "draws": 0
+    },
+    "win_methods": {
+      "Crowd": 1,
+      "KO": 12,
+      "Double KO, Split JD": 1,
+      "JD": 1
+    }
+  },
+  {
+    "name": "Copperhead",
+    "weight_class": "250lbs",
+    "team": "Team Copperhead (formerly Caustic Creations )",
+    "weapon_type": "Eggbeater drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Copperhead",
+    "group": "Group C",
+    "record": {
+      "wins": 16,
+      "losses": 8,
+      "draws": 0
+    },
+    "win_methods": {
+      "Split JD": 2,
+      "KO": 8,
+      "JD": 5,
+      "Double KO, JD": 1
+    }
+  },
+  {
+    "name": "DeathRoll",
+    "weight_class": "243-250lbs",
+    "team": "Team DeathRoll",
+    "weapon_type": "Vertical spinning disk",
+    "wiki_url": "https://battlebots.fandom.com/wiki/DeathRoll",
+    "group": "Group D",
+    "record": {
+      "wins": 9,
+      "losses": 8,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 7,
+      "Judges' Decision": 1
+    }
+  },
+  {
+    "name": "Disarray",
+    "weight_class": "250lbs",
+    "team": "Wildcat Robotics (a.k.a. Team 22037)",
+    "weapon_type": "Vertical drisk spinner Vertical disk spinner (Proving Ground 2024-Present) Flamethrower (Proving Ground 2025-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Disarray",
+    "group": "Group B",
+    "record": {
+      "wins": 3,
+      "losses": 4,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 1,
+      "Crowd": 2
+    }
+  },
+  {
+    "name": "End Game",
+    "weight_class": "250lbs",
+    "team": "Team End Game (formerly OYES Robotics)",
+    "weapon_type": "Vertical spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/End_Game",
+    "group": "Group D",
+    "record": {
+      "wins": 20,
+      "losses": 7,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 14,
+      "Judges' Decision": 2
+    }
+  },
+  {
+    "name": "Golden Fury",
+    "weight_class": "242lbs (WC V)",
+    "team": "PY Roboticzs",
+    "weapon_type": "Vertical spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Golden_Fury",
+    "group": "Group D",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "draws": 0
+    },
+    "win_methods": {}
+  },
+  {
+    "name": "HUGE",
+    "weight_class": "250lbs",
+    "team": "Team HUGE",
+    "weapon_type": "Vertical bar spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/HUGE",
+    "group": "Group E",
+    "record": {
+      "wins": 9,
+      "losses": 9,
+      "draws": 0
+    },
+    "win_methods": {
+      "Judges' Decision": 4,
+      "KO": 2
+    }
+  },
+  {
+    "name": "HyperShock",
+    "weight_class": "238-250lbs",
+    "team": "Team HyperShock (formerly Shenanigans & Co.)",
+    "weapon_type": "Vertical spinner Hydraulic arms (WC I) Lifting wedges (WC II)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/HyperShock",
+    "group": "Group E",
+    "record": {
+      "wins": 19,
+      "losses": 14,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 16,
+      "Judges' Decision": 2
+    }
+  },
+  {
+    "name": "JackPot",
+    "weight_class": "243-250lbs",
+    "team": "Vegas Combat Robotics",
+    "weapon_type": "Vertical spinner Lifting forks (WC VII-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/JackPot",
+    "group": "Group C",
+    "record": {
+      "wins": 18,
+      "losses": 14,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 12,
+      "JD": 5,
+      "Split JD": 1
+    }
+  },
+  {
+    "name": "MadCatter",
+    "weight_class": "250lbs",
+    "team": "Team Bad Kitty",
+    "weapon_type": "Vertical spinner Axe (WC IV-BB: Bounty Hunters) Lifting arm (WC IV-WC VII)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/MadCatter",
+    "group": "Group B",
+    "record": {
+      "wins": 18,
+      "losses": 14,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 15,
+      "JD": 2,
+      "Split JD": 1
+    }
+  },
+  {
+    "name": "Magnitude",
+    "weight_class": "220-250lbs",
+    "team": "Team Wazio",
+    "weapon_type": "Eggbeater drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Magnitude",
+    "group": "Group B",
+    "record": {
+      "wins": 4,
+      "losses": 3,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 4
+    }
+  },
+  {
+    "name": "Malice",
+    "weight_class": "250lbs",
+    "team": "Team Malice",
+    "weapon_type": "Horizontal drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Malice",
+    "group": "Group D",
+    "record": {
+      "wins": 8,
+      "losses": 8,
+      "draws": 0
+    },
+    "win_methods": {
+      "JD": 1,
+      "KO": 5,
+      "Judges' Decision": 2
+    }
+  },
+  {
+    "name": "Manta",
+    "weight_class": "243lbs (BB FaceOffs) [ 1 ] 230lbs (BB Proving Ground) [ 2 ]",
+    "team": "Team Tanto Robotics",
+    "weapon_type": "Eggbeater drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Manta",
+    "group": "Group A",
+    "record": {
+      "wins": 4,
+      "losses": 0,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 4
+    }
+  },
+  {
+    "name": "Minotaur",
+    "weight_class": "230-250lbs",
+    "team": "Team RioBotz",
+    "weapon_type": "Drum spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Minotaur",
+    "group": "Group E",
+    "record": {
+      "wins": 15,
+      "losses": 10,
+      "draws": 0
+    },
+    "win_methods": {
+      "JD": 1,
+      "KO": 10,
+      "Judges' Decision": 2
+    }
+  },
+  {
+    "name": "Orbitron",
+    "weight_class": "250lbs",
+    "team": "Team Orbitron",
+    "weapon_type": "Twin vertical spinners",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Orbitron",
+    "group": "Group F",
+    "record": {
+      "wins": 4,
+      "losses": 2,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 4
+    }
+  },
+  {
+    "name": "Ribbot",
+    "weight_class": "250lbs",
+    "team": "Team Ribbot (formerly Team WPI)",
+    "weapon_type": "Vertical disk spinner Horizontal undercutter Vertical bar spinner Lifter (WC IV) Eggbeater spinner (BB BB Pro League)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Ribbot",
+    "group": "Group F",
+    "record": {
+      "wins": 2,
+      "losses": 4,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 2
+    }
+  },
+  {
+    "name": "Skorpios",
+    "weight_class": "~250lbs",
+    "team": "Bot Bash Party Crew (formerly Offbeat Robotics )",
+    "weapon_type": "Articulating overhead saw Hammer saw (WC IV-Present) Articulating flamethrower fangs (WC V) Overhead flamethrower (WC VII-Present) Overhead swinging knife (WC VII-Present)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Skorpios",
+    "group": "Group A",
+    "record": {
+      "wins": 27,
+      "losses": 19,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 10,
+      "JD": 9,
+      "Split JD": 3,
+      "Crowd": 3,
+      "Judges' Decision": 1
+    }
+  },
+  {
+    "name": "Switchback",
+    "weight_class": null,
+    "team": "Team Midnight Invention",
+    "weapon_type": "Articulating eggbeater spinner (WC VII-Present) Articulating drum spinner (WC VI-BB: Champions I)",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Switchback",
+    "group": "Group F",
+    "record": {
+      "wins": 2,
+      "losses": 4,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 2
+    }
+  },
+  {
+    "name": "Terrortops",
+    "weight_class": "250lbs",
+    "team": "Team Terrortops",
+    "weapon_type": "Vertical spinner Lifter",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Terrortops",
+    "group": "Group A",
+    "record": {
+      "wins": 8,
+      "losses": 2,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 6,
+      "JD": 2
+    }
+  },
+  {
+    "name": "The Twins",
+    "weight_class": null,
+    "team": "Seems Reasonable Robotics",
+    "weapon_type": "2x Vertical spinners",
+    "wiki_url": "https://battlebots.fandom.com/wiki/The_Twins",
+    "group": "Group C",
+    "record": {
+      "wins": 0,
+      "losses": 1,
+      "draws": 0
+    },
+    "win_methods": {}
+  },
+  {
+    "name": "Tombstone",
+    "weight_class": "220lbs (Pro Championship 2009) 250lbs (WC I-Present) 340lbs (NPC Charity Open)",
+    "team": "Hardcore Robotics",
+    "weapon_type": "Horizontal bar spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Tombstone",
+    "group": "Group B",
+    "record": {
+      "wins": 34,
+      "losses": 19,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 25,
+      "JD": 4,
+      "Double KO, JD": 1
+    }
+  },
+  {
+    "name": "Valkyrie",
+    "weight_class": "250lbs",
+    "team": "Team VALKYRIE (WC VI-Present) Team Questionable Designs (WC III-WC V)",
+    "weapon_type": "Undercutter spinner",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Valkyrie",
+    "group": "Group A",
+    "record": {
+      "wins": 22,
+      "losses": 16,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 14,
+      "JD": 7,
+      "Crowd": 1
+    }
+  },
+  {
+    "name": "Witch Doctor",
+    "weight_class": "250lbs (WC I-Present) 120lbs (BotsIQ 2010-BotsIQ 2011)",
+    "team": "Team Witch Doctor (formerly Busted Nuts Robotics)",
+    "weapon_type": "Vertical disk spinner Vertical drisk spinner (WC II-Present) Flamethrower",
+    "wiki_url": "https://battlebots.fandom.com/wiki/Witch_Doctor",
+    "group": "Group F",
+    "record": {
+      "wins": 16,
+      "losses": 7,
+      "draws": 0
+    },
+    "win_methods": {
+      "KO": 11,
+      "Judges' Decision": 4
+    }
+  }
+]

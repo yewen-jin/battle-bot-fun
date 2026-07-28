@@ -1,0 +1,3332 @@
+[
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "DeathRoll",
+  "bot_b": "Captain Shrederator",
+  "winner": "Captain Shrederator",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "DeathRoll",
+  "bot_b": "Bucktooth Burl & Skorpios",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "DeathRoll",
+  "bot_b": "End Game",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "DeathRoll",
+  "bot_b": "Foxtrot",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "DeathRoll",
+  "bot_b": "Quantum",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "DeathRoll",
+  "bot_b": "ROTATOR",
+  "winner": "DeathRoll",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "DeathRoll",
+  "bot_b": "Yeti",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "DeathRoll",
+  "bot_b": "Minotaur",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "DeathRoll",
+  "bot_b": "Witch Doctor",
+  "winner": "Witch Doctor",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "Cobalt",
+  "winner": "Cobalt",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "Switchback",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "Mammoth",
+  "winner": "DeathRoll",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "Monsoon",
+  "winner": "Monsoon",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "Hydra",
+  "winner": "Hydra",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "ROTATOR",
+  "winner": "ROTATOR",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "Slammo!",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "DeathRoll",
+  "bot_b": "Gigabyte",
+  "winner": "Gigabyte",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "End Game",
+  "bot_b": "Captain Shrederator",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "End Game",
+  "bot_b": "Lock-Jaw",
+  "winner": "End Game",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "End Game",
+  "bot_b": "Bite Force",
+  "winner": "Bite Force",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "End Game",
+  "bot_b": "Son of Whyachi",
+  "winner": "Son of Whyachi",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "End Game",
+  "bot_b": "SawBlaze",
+  "winner": "SawBlaze",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "End Game",
+  "bot_b": "WAR Hawk & Brutus",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "End Game",
+  "bot_b": "DeathRoll",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "End Game",
+  "bot_b": "Ribbot",
+  "winner": "Ribbot",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "End Game",
+  "bot_b": "Gruff",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "End Game",
+  "bot_b": "Minotaur",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "End Game",
+  "bot_b": "Cobalt",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "End Game",
+  "bot_b": "DUCK!",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "Tombstone",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "Bloodsport",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "HyperShock",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "Perfect Phoenix",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "ROTATOR",
+  "winner": "End Game",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "Shatter!",
+  "winner": "End Game",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "Tantrum",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "End Game",
+  "bot_b": "Whiplash",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "End Game",
+  "bot_b": "Hydra",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "End Game",
+  "bot_b": "Witch Doctor",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "End Game",
+  "bot_b": "SawBlaze",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "End Game",
+  "bot_b": "Skorpios",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "End Game",
+  "bot_b": "Minotaur",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "End Game",
+  "bot_b": "Ribbot",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "End Game",
+  "bot_b": "Tantrum",
+  "winner": "End Game",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "End Game",
+  "bot_b": "Witch Doctor",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "Blip",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "RIPperoni",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "HyperShock",
+  "winner": "End Game",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "Gigabyte",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "Tantrum",
+  "winner": "End Game",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "Copperhead",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "Free Shipping",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "JackPot",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "End Game",
+  "bot_b": "SawBlaze",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HUGE",
+  "bot_b": "SubZero",
+  "winner": "HUGE",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HUGE",
+  "bot_b": "Free Shipping",
+  "winner": "HUGE",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HUGE",
+  "bot_b": "Chomp",
+  "winner": "HUGE",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HUGE",
+  "bot_b": "Icewave",
+  "winner": "Icewave",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HUGE",
+  "bot_b": "Bite Force",
+  "winner": "Bite Force",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HUGE",
+  "bot_b": "Son of Whyachi",
+  "winner": "Son of Whyachi",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HUGE",
+  "bot_b": "Jasper",
+  "winner": "HUGE",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HUGE",
+  "bot_b": "Gigabyte",
+  "winner": "HUGE",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HUGE",
+  "bot_b": "Bronco",
+  "winner": "HUGE",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HUGE",
+  "bot_b": "HyperShock",
+  "winner": "HUGE",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HUGE",
+  "bot_b": "Whiplash",
+  "winner": "Whiplash",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HUGE",
+  "bot_b": "Mammoth",
+  "winner": "Mammoth",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HUGE",
+  "bot_b": "Hydra",
+  "winner": "Hydra",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HUGE",
+  "bot_b": "Kraken",
+  "winner": "HUGE",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HUGE",
+  "bot_b": "Whiplash",
+  "winner": "Whiplash",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "HUGE",
+  "bot_b": "Slap Box",
+  "winner": "HUGE",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "HUGE",
+  "bot_b": "Malice",
+  "winner": "Malice",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HUGE",
+  "bot_b": "Riptide",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HUGE",
+  "bot_b": "Retrograde",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HUGE",
+  "bot_b": "Switchback",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HUGE",
+  "bot_b": "Uppercut",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HUGE",
+  "bot_b": "Captain Shrederator",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "HUGE",
+  "bot_b": "Deep Six",
+  "winner": "Deep Six",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "Shatter!",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "Blip",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "Fusion",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "Starchild",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "Skorpios",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "MadCatter",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "Witch Doctor",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "Copperhead",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HUGE",
+  "bot_b": "SawBlaze",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Minotaur",
+  "bot_b": "Photon Storm",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Minotaur",
+  "bot_b": "Blacksmith",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Minotaur",
+  "bot_b": "Warhead",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Minotaur",
+  "bot_b": "Bronco",
+  "winner": "Minotaur",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Minotaur",
+  "bot_b": "Bombshell",
+  "winner": "Bombshell",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "Tombstone",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "Hypothermia",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "Blacksmith",
+  "winner": "Minotaur",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "SubZero",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "Witch Doctor",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "Monsoon",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "Lock-Jaw",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Minotaur",
+  "bot_b": "Bite Force",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "Whiplash",
+  "winner": "Whiplash",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "Gigabyte",
+  "winner": "Gigabyte",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "Lucky",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "End Game",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "Black Dragon",
+  "winner": "Black Dragon",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "Shatter!",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "Cobalt",
+  "winner": "Minotaur",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "Hydra",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Minotaur",
+  "bot_b": "DeathRoll",
+  "winner": "DeathRoll",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Minotaur",
+  "bot_b": "SawBlaze",
+  "winner": "SawBlaze",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Minotaur",
+  "bot_b": "Dragon Slayer",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Minotaur",
+  "bot_b": "Deep Six",
+  "winner": "Minotaur",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Minotaur",
+  "bot_b": "Bloodsport",
+  "winner": "Minotaur",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Minotaur",
+  "bot_b": "End Game",
+  "winner": "Minotaur",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Minotaur",
+  "bot_b": "Witch Doctor",
+  "winner": "Witch Doctor",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Minotaur",
+  "bot_b": "Tantrum",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Minotaur",
+  "bot_b": "Free Shipping",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Minotaur",
+  "bot_b": "Cobalt",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Minotaur",
+  "bot_b": "Witch Doctor",
+  "winner": "Witch Doctor",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Minotaur",
+  "bot_b": "Fusion",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Minotaur",
+  "bot_b": "Malice",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Minotaur",
+  "bot_b": "SawBlaze",
+  "winner": "SawBlaze",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Minotaur",
+  "bot_b": "Claw Viper (4/11/2024)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Minotaur",
+  "bot_b": "Claw Viper (4/12/2024)",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Minotaur",
+  "bot_b": "Lucky (4/13/2024)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Minotaur",
+  "bot_b": "Traves T. (4/14/2024)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Bloodsport",
+  "bot_b": "Lucky",
+  "winner": "Bloodsport",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Bloodsport",
+  "bot_b": "Black Dragon",
+  "winner": "Black Dragon",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Bloodsport",
+  "bot_b": "Breaker Box",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Bloodsport",
+  "bot_b": "The Four Horsemen",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Bloodsport",
+  "bot_b": "Uppercut & Railgun MAX",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Bloodsport",
+  "bot_b": "Sharkoprion",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "Skorpios",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "End Game",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "Chronos",
+  "winner": "Bloodsport",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "Gruff",
+  "winner": "Bloodsport",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "Tantrum",
+  "winner": "Tantrum",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "Aegis",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "HiJinx",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "Bloodsport",
+  "bot_b": "Lock-Jaw",
+  "winner": "Lock-Jaw",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Bloodsport",
+  "bot_b": "Whiplash",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Bloodsport",
+  "bot_b": "SubZero",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Bloodsport",
+  "bot_b": "Claw Viper",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Bloodsport",
+  "bot_b": "Minotaur",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Bloodsport",
+  "bot_b": "Riptide",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Bloodsport",
+  "bot_b": "Big Dill",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Bloodsport",
+  "bot_b": "Blade",
+  "winner": "Bloodsport",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Bloodsport",
+  "bot_b": "Blacksmith",
+  "winner": "Bloodsport",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Bloodsport",
+  "bot_b": "Skorpios",
+  "winner": "Skorpios",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Bloodsport",
+  "bot_b": "Copperhead",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Bloodsport",
+  "bot_b": "Gigabyte",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Bloodsport",
+  "bot_b": "ROTATOR",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Bloodsport",
+  "bot_b": "Beta",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Bloodsport",
+  "bot_b": "Lock-Jaw",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Bloodsport",
+  "bot_b": "Big Dill",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "Bloodsport",
+  "bot_b": "MadCatter",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Bloodsport",
+  "bot_b": "JackPot  (9/9/2023)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Bloodsport",
+  "bot_b": "JackPot  (9/10/2023)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship I",
+  "season": "2015",
+  "bot_a": "HyperShock",
+  "bot_b": "Mohawk",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship I",
+  "season": "2015",
+  "bot_a": "HyperShock",
+  "bot_b": "Bite Force",
+  "winner": "Bite Force",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship I",
+  "season": "2015",
+  "bot_a": "HyperShock",
+  "bot_b": "Icewave",
+  "winner": "Icewave",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "HyperShock",
+  "bot_b": "HellaChopper (Forfeit)",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "HyperShock",
+  "bot_b": "UltraViolent",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "HyperShock",
+  "bot_b": "Warrior Clan",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "HyperShock",
+  "bot_b": "Poison Arrow",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HyperShock",
+  "bot_b": "Bite Force",
+  "winner": "Bite Force",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HyperShock",
+  "bot_b": "Battle Royale With Cheese",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HyperShock",
+  "bot_b": "Free Shipping",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HyperShock",
+  "bot_b": "Reality",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "HyperShock",
+  "bot_b": "Skorpios",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HyperShock",
+  "bot_b": "Valkyrie",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HyperShock",
+  "bot_b": "Monsoon",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HyperShock",
+  "bot_b": "Bite Force",
+  "winner": "Bite Force",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HyperShock",
+  "bot_b": "Breaker Box",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HyperShock",
+  "bot_b": "HUGE",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "HyperShock",
+  "bot_b": "Hydra",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HyperShock",
+  "bot_b": "Gruff",
+  "winner": "Gruff",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HyperShock",
+  "bot_b": "Mammoth",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HyperShock",
+  "bot_b": "End Game",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "HyperShock",
+  "bot_b": "Hydra",
+  "winner": "Hydra",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "HyperShock",
+  "bot_b": "Sporkinok",
+  "winner": "HyperShock",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "HyperShock",
+  "bot_b": "Ghost Raptor",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "HyperShock",
+  "bot_b": "Skorpios",
+  "winner": "Skorpios",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HyperShock",
+  "bot_b": "Slammo!",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HyperShock",
+  "bot_b": "Lock-Jaw",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "HyperShock",
+  "bot_b": "P1",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "re:MARS all:STARS BattleBots Challenge (2022)",
+  "season": null,
+  "bot_a": "HyperShock",
+  "bot_b": "Tombstone",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "re:MARS all:STARS BattleBots Challenge (2022)",
+  "season": null,
+  "bot_a": "HyperShock",
+  "bot_b": "Blip",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "re:MARS all:STARS BattleBots Challenge (2022)",
+  "season": null,
+  "bot_a": "HyperShock",
+  "bot_b": "Hydra",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "HyperShock",
+  "bot_b": "DUCK!",
+  "winner": "HyperShock",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "HyperShock",
+  "bot_b": "Valkyrie",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "HyperShock",
+  "bot_b": "MadCatter",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "HyperShock",
+  "bot_b": "Gigabyte",
+  "winner": "HyperShock",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "HyperShock",
+  "bot_b": "Skorpios",
+  "winner": "HyperShock",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "HyperShock",
+  "bot_b": "Witch Doctor",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "SawBlaze",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "Whiplash",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "End Game",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "Claw Viper",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "Lucky",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "Riptide",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "Starchild",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "Claw Viper",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "HyperShock",
+  "bot_b": "RIPperoni",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "HyperShock",
+  "bot_b": "Magnitude (12/10/2023)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "HyperShock",
+  "bot_b": "Magnitude (12/11/2023)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BotsIQ 2010",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "BattleBear",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BotsIQ 2010",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Bear Tooth",
+  "winner": "Witch Doctor",
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BotsIQ 2010",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Fuchsia Fusion",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots IQ 2011",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "PanDEMONium",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots IQ 2011",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "D-Mora-Lizer",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots IQ 2011",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Grasshopper",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots IQ 2011",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Blue Flame",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots IQ 2011",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Blue Flame",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots IQ 2011",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Fluffy DeLarge",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship I",
+  "season": "2015",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Bronco",
+  "winner": "Bronco",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship I",
+  "season": "2015",
+  "bot_a": "Witch Doctor",
+  "bot_b": "OverDrive",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship I",
+  "season": "2015",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Tombstone",
+  "winner": "Tombstone",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship I",
+  "season": "2015",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Nightmare & Overhaul",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Witch Doctor",
+  "bot_b": "ROTATOR",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Red Devil",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship II",
+  "season": "2016",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Wrecks & Bite Force",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Yeti",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Blacksmith",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Ultimo Destructo",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Overhaul",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship III",
+  "season": "2018",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Minotaur",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Shatter!",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Captain Shrederator",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Whiplash",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Gigabyte",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Blacksmith",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "SawBlaze",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "DeathRoll",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Bite Force",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "re:MARS all:STARS BattleBots Challenge (2019)",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Tombstone",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "re:MARS all:STARS BattleBots Challenge (2019)",
+  "season": null,
+  "bot_a": "Witch Doctor",
+  "bot_b": "Bronco",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Hydra",
+  "winner": "Hydra",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Kraken",
+  "winner": "Kraken",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Witch Doctor",
+  "bot_b": "SlamMow!",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Skorpios",
+  "winner": "Witch Doctor",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Witch Doctor",
+  "bot_b": "SawBlaze",
+  "winner": "SawBlaze",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "Witch Doctor",
+  "bot_b": "SubZero",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "DUCK!",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "End Game",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Rusty",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Glitch (Withdrawal)",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Mammoth",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Copperhead",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Minotaur",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "SawBlaze",
+  "winner": "SawBlaze",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Tantrum",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Whiplash",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Glitch",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Witch Doctor",
+  "bot_b": "HyperShock",
+  "winner": "Witch Doctor",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Witch Doctor",
+  "bot_b": "End Game",
+  "winner": "End Game",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Ribbot",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Fusion",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Gruff",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Minotaur",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Witch Doctor",
+  "bot_b": "JackPot",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Witch Doctor",
+  "bot_b": "Lock-Jaw",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Witch Doctor",
+  "bot_b": "HUGE",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Switchback",
+  "bot_b": "Gruff",
+  "winner": "Gruff",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Switchback",
+  "bot_b": "Slammo!",
+  "winner": "Switchback",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Switchback",
+  "bot_b": "HUGE",
+  "winner": "HUGE",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Switchback",
+  "bot_b": "Lucky",
+  "winner": "Switchback",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Switchback",
+  "bot_b": "Blacksmith",
+  "winner": "Blacksmith",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Switchback",
+  "bot_b": "Banshee",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Switchback",
+  "bot_b": "DeathRoll",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Switchback",
+  "bot_b": "Ominous",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Switchback",
+  "bot_b": "HiJinx",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Switchback",
+  "bot_b": "Malice",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "Switchback",
+  "bot_b": "Kraken",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "Switchback",
+  "bot_b": "SHREDDIT BRO!",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Switchback",
+  "bot_b": "Swamp Thing (09/23/23)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Switchback",
+  "bot_b": "Hellfire",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Switchback",
+  "bot_b": "Swamp Thing (09/24/23)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Ribbot",
+  "bot_b": "Kraken",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Ribbot",
+  "bot_b": "End Game",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Ribbot",
+  "bot_b": "Falcon",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Ribbot",
+  "bot_b": "SawBlaze",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Ribbot",
+  "bot_b": "Valkyrie",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship IV",
+  "season": "2019",
+  "bot_a": "Ribbot",
+  "bot_b": "Sharkoprion",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Ribbot",
+  "bot_b": "Tracer",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Ribbot",
+  "bot_b": "MadCatter",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Ribbot",
+  "bot_b": "Axolotl",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Ribbot",
+  "bot_b": "Beta",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Ribbot",
+  "bot_b": "Uppercut",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Ribbot",
+  "bot_b": "Black Dragon",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Ribbot",
+  "bot_b": "Defender",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Ribbot",
+  "bot_b": "Overhaul",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Ribbot",
+  "bot_b": "P1",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Ribbot",
+  "bot_b": "Hydra",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Ribbot",
+  "bot_b": "Double Jeopardy",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Ribbot",
+  "bot_b": "Malice",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Ribbot",
+  "bot_b": "Deep Six",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Ribbot",
+  "bot_b": "Lock-Jaw",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Ribbot",
+  "bot_b": "End Game",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "Witch Doctor",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "Claw Viper",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "JackPot",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "Skorpios",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "Quantum",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "Black Dragon",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "Hydra",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Ribbot",
+  "bot_b": "SawBlaze",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Orbitron",
+  "bot_b": "Roundhouse (8/26/2023)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Orbitron",
+  "bot_b": "Roundhouse (8/27/2023)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Orbitron",
+  "bot_b": "Disarray (3/9/2024)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots Proving Ground",
+  "season": null,
+  "bot_a": "Orbitron",
+  "bot_b": "Disarray (3/10/2024)",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Malice",
+  "bot_b": "Axe Backwards",
+  "winner": "Malice",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Malice",
+  "bot_b": "Shatter!",
+  "winner": "Malice",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Malice",
+  "bot_b": "MadCatter",
+  "winner": "MadCatter",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship V",
+  "season": "2020",
+  "bot_a": "Malice",
+  "bot_b": "Gigabyte",
+  "winner": "Gigabyte",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "Malice",
+  "bot_b": "Tracer",
+  "winner": "Malice",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "Malice",
+  "bot_b": "HUGE",
+  "winner": "Malice",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Bounty Hunters",
+  "season": "2020",
+  "bot_a": "Malice",
+  "bot_b": "SubZero",
+  "winner": "SubZero",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Malice",
+  "bot_b": "Tantrum",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Malice",
+  "bot_b": "JackPot",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Malice",
+  "bot_b": "Blacksmith",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VI",
+  "season": "2021",
+  "bot_a": "Malice",
+  "bot_b": "Skorpios",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "re:MARS all:STARS BattleBots Challenge (2022)",
+  "season": null,
+  "bot_a": "Malice",
+  "bot_b": "JackPot",
+  "winner": "Malice",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Malice",
+  "bot_b": "Slammo!",
+  "winner": "Malice",
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions I",
+  "season": "2022",
+  "bot_a": "Malice",
+  "bot_b": "Ribbot",
+  "winner": "Ribbot",
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Lock-Jaw",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Emulsifier",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Valkyrie",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Gruff",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Switchback",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Minotaur",
+  "winner": null,
+  "method": null,
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "World Championship VII",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Captain Shrederator",
+  "winner": null,
+  "method": "Judges' Decision",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "HiJinx",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ },
+ {
+  "event": "BattleBots: Champions II",
+  "season": "2023",
+  "bot_a": "Malice",
+  "bot_b": "Whiplash",
+  "winner": null,
+  "method": "KO",
+  "time": null,
+  "summary": null
+ }
+]

@@ -1,0 +1,1 @@
+NO PROFILE PAGES ON robotcombatevents.com for BattleBots pro bots (search empty, /robots/<slug> redirects to homepage). Use Fandom fallback: https://battlebots.fandom.com/wiki/<Bot_Name> (underscores), fetch via Bright Data (direct = 403), fights in table.article-table (non-collapsible), season header rows are <th>.
