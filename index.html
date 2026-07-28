@@ -37,12 +37,18 @@
   <h2>CONFIG (live)</h2>
   <div id="sliders"></div>
 </div>
+<script src="./data/data.js"></script>
+<script src="./beats.js"></script>
+<script src="./speak.js"></script>
 <script type="module">
 import { CONFIG, createBody } from './physics.js';
 import { createCanvasPair, loadSprite } from './render.js';
 import { runFight } from './runner.js';
 
-const FALLBACK_BOTS = ['Tombstone', 'Minotaur'];
+// beats.js/speak.js are Stream A's classic (non-module) scripts, loaded above —
+// they expose window.Beats / window.Speak. Shim onto window.speak so runner.js's
+// existing `typeof window.speak === 'function'` check picks it up unchanged.
+window.speak = window.Speak.speak;
 
 const pair = createCanvasPair(document.getElementById('canvasHost'));
 const captionEl = document.getElementById('caption');
@@ -50,8 +56,8 @@ const pickerNoteEl = document.getElementById('pickerNote');
 const botASelect = document.getElementById('botASelect');
 const botBSelect = document.getElementById('botBSelect');
 
-let baseFight = null;
 let currentRunner = null;
+let fightGeneration = 0;
 
 function populateSelect(select, bots, defaultName) {
   select.innerHTML = '';
@@ -64,8 +70,9 @@ function populateSelect(select, bots, defaultName) {
   if (bots.includes(defaultName)) select.value = defaultName;
 }
 
-function startFight(nameA, nameB) {
+async function startFight(nameA, nameB) {
   if (currentRunner) currentRunner.stop();
+  const myGeneration = ++fightGeneration;
 
   const bodyA = createBody(60, 50, CONFIG.palette[1]);
   bodyA.name = nameA;
@@ -78,19 +85,28 @@ function startFight(nameA, nameB) {
     loadSprite(body.name).then((img) => { body.sprite = img; });
   }
 
-  // sample_beats.json's choreography is authored for Tombstone vs. Minotaur —
-  // picking different names re-skins sprites/captions via text substitution,
-  // it doesn't generate a new fight. Flag that plainly rather than hide it.
-  pickerNoteEl.textContent = (nameA === 'Tombstone' && nameB === 'Minotaur')
-    ? ''
-    : `Choreography is still Tombstone vs. Minotaur under the hood — captions relabeled to ${nameA} vs. ${nameB}.`;
+  pickerNoteEl.textContent = '';
+  captionEl.textContent = `Generating commentary for ${nameA} vs ${nameB}…`;
 
-  const fight = JSON.parse(JSON.stringify(baseFight));
-  for (const beat of fight.beats) {
-    beat.line = beat.line.split('Tombstone').join(nameA).split('Minotaur').join(nameB);
-    if (beat.fact) beat.fact = beat.fact.split('Tombstone').join(nameA).split('Minotaur').join(nameB);
+  // window.Beats.generate() (beats.js) makes one Anthropic call, validates the
+  // result, retries once, and falls back to window.OOF_SAMPLE_BEATS on failure.
+  // getApiKey() inside beats.js prompts for a key on first use and caches it in
+  // localStorage — no separate key UI needed here.
+  const { doc, source } = await window.Beats.generate(nameA, nameB);
+  let fight = doc;
+
+  if (source === 'fallback') {
+    // The fallback fixture is the frozen Tombstone-vs-Minotaur fight — relabel
+    // its captions to whichever bots were actually picked so it stays coherent.
+    fight = JSON.parse(JSON.stringify(doc));
+    for (const beat of fight.beats) {
+      beat.line = beat.line.split('Tombstone').join(nameA).split('Minotaur').join(nameB);
+      if (beat.fact) beat.fact = beat.fact.split('Tombstone').join(nameA).split('Minotaur').join(nameB);
+    }
+    pickerNoteEl.textContent = 'Live generation unavailable — playing the sample fight instead.';
   }
 
+  if (myGeneration !== fightGeneration) return; // a newer Fight! click superseded this one
   currentRunner = runFight(fight, bodies, targetMap, pair, captionEl);
 }
 
@@ -152,16 +168,14 @@ for (const [key, min, max, step] of SLIDERS) {
   slidersEl.append(row);
 }
 
-const botsPromise = fetch('./raw/groups.json')
-  .then((res) => (res.ok ? res.json() : Promise.reject()))
-  .then((data) => data.bots || Object.values(data.groups || data).flat())
-  .catch(() => FALLBACK_BOTS);
-
 Promise.all([
-  fetch('./sample_beats.json').then((res) => res.json()),
-  botsPromise,
-]).then(([fight, bots]) => {
-  baseFight = fight;
+  fetch('./prompts/beats_system.txt').then((r) => r.text()),
+  fetch('./sample_beats.json').then((r) => r.json()),
+]).then(([systemPrompt, sampleBeats]) => {
+  window.OOF_SYSTEM_PROMPT = systemPrompt;
+  window.OOF_SAMPLE_BEATS = sampleBeats;
+
+  const bots = window.OOF_DATA.bots.map((b) => b.name);
   populateSelect(botASelect, bots, 'Tombstone');
   populateSelect(botBSelect, bots, 'Minotaur');
   startFight(botASelect.value, botBSelect.value);

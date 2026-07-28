@@ -4,9 +4,20 @@ Hackathon build, ~2h window, demo at 21:00. See `PRD.md` for the full spec — t
 
 ## Ownership
 
-- **Mine (Stream B):** `physics.js`, `render.js`, `runner.js`, `index.html` (shell only, agreed at merge points).
-- **Not mine (Stream A, separate session):** `beats.js`, `speak.js`, `prompts/`, `data/`, `raw/`. Never read, write, or plan changes to these.
-- `sample_beats.json` is the frozen dev/demo fixture — schema-valid, committed, never regenerated during the build. Everything is developed and viewed against it until the T+40 merge.
+- **Stream B:** `physics.js`, `render.js`, `runner.js`, `index.html`, `preview.html`, `demo.html`.
+- **Stream A (partner's, as committed on `data-scrape`):** `beats.js`, `speak.js`, `data/`, `raw/`, `prompts/beats_system.txt`, `1_scrape.py`, `2_merge.py`, `3_embed.py`. An earlier ES-module version of `beats.js`/`speak.js` was built by Claude when the generation layer didn't exist yet (see WORKLOG "Built Stream A's missing piece") — once the partner pushed their own independent versions, the user chose to take the partner's and adapt Stream B's wiring instead (see WORKLOG "Reconciled with partner's independent beats.js/speak.js").
+
+## How beats.js/speak.js are wired into index.html
+
+`beats.js`/`speak.js` are **classic (non-module) scripts**, not ES modules — they set `window.Beats` / `window.Speak`, not named exports. `index.html` loads them in this exact order, before the `type="module"` script: `data/data.js` (sets `window.OOF_DATA`, read synchronously at `beats.js`'s top level) → `beats.js` → `speak.js`. The module script then:
+- Shims `window.speak = window.Speak.speak` so `runner.js`'s existing `typeof window.speak === 'function'` check works unchanged.
+- Fetches `prompts/beats_system.txt` and `sample_beats.json` into `window.OOF_SYSTEM_PROMPT` / `window.OOF_SAMPLE_BEATS` (both read lazily inside `Beats.generate()`, so this can happen async at page load).
+- Populates the bot-picker dropdowns from `window.OOF_DATA.bots` directly (no separate `raw/groups.json` fetch needed).
+- Calls `window.Beats.generate(nameA, nameB)` on "Fight!" — it makes one Anthropic call, validates, retries once, and falls back to `window.OOF_SAMPLE_BEATS` on failure. On fallback, `index.html` relabels the fixture's Tombstone/Minotaur captions to whichever bots were actually picked (see WORKLOG for why).
+
+There is **no API-key input field** (removed per explicit user instruction) — `beats.js`'s internal `getApiKey()` calls the browser's `prompt()` on first use and caches the key in `localStorage` (key `oof_api_key`) from then on.
+
+`beats.js` calls the Anthropic API **directly from the browser** (no backend) — the key is visible to anyone with dev tools open on the page. Acceptable for a local demo, not for any public deployment.
 
 ## Body-state shape (contract between physics.js and render.js)
 
