@@ -363,3 +363,22 @@ Given (2) confirmed 5 real *text* models were accessible, pivoted to using this 
 **Files Changed:** `index.html`, `demo.html` (both: `#panel` CSS only)
 
 **Backtrack Notes:** Purely a CSS selector addition — removing the `:has()` rule reverts to the previous (content-hides-but-panel-stays-full-width) behavior with no other side effects.
+
+## [T+~115] Switched TTS to Cartesia (real cloud voice)
+
+**Status:** completed
+
+**Summary:** Researched ElevenLabs vs. Cartesia (user's "whichever is free" ask) — both have workable free tiers (ElevenLabs 10k credits/mo, Cartesia 20k credits/mo + ~27min audio) and both verified CORS-compatible for direct-browser calls (same check applied to every prior provider this session). User picked Cartesia and added `CARTESIA_API_KEY` to `.env`. Queried `GET /voices` live to pick from the 10 available stock voices rather than guess a voice ID — picked "Clive - Measured Expert" ("composed and articulate... perfect for delivering educational content or detailed advice"), matching the PRD's explicit "straight, serious broadcast voice" direction better than the more casual/cheerful alternatives. Verified the actual `/tts/bytes` call live with real commentary lines before rewriting `speak.js` — confirmed valid WAV output (`file` command: RIFF/WAVE PCM 16-bit 44100Hz mono). Measured round-trip latency (~0.72-0.73s for typical commentary-line lengths) and bumped `CONFIG.speakLeadSeconds` from 0.15 → 0.9 accordingly, since a network TTS call is nowhere near the near-instant local `speechSynthesis` the 150ms figure was calibrated for — without this, audio would now start noticeably *after* the impulse it describes, which the PRD's merge-protocol guidance explicitly warns against ("ears forgive early, not late").
+
+**Decisions & Reasoning:**
+- Decision: queried Cartesia's live `/voices` endpoint to pick a real voice ID rather than guessing one from documentation or training data.
+  Why: same empirical-verification discipline applied to every model/endpoint/model-ID this session (Gemini, OpenAI) — voice IDs are opaque UUIDs with no guessable pattern, and picking a nonexistent one would only surface as a runtime 400 later.
+- Decision: measured actual round-trip latency with real API calls before deciding the new `speakLeadSeconds` value, rather than picking an arbitrary "should be enough" number.
+  Why: the whole point of `speakLeadSeconds` is compensating for a measured real-world delay — guessing it defeats the purpose and risks either audio still lagging (guessed too low) or captions appearing distractingly early (guessed too high).
+- Decision: kept the interrupt-on-new-beat semantics (pause any currently-playing audio when a new `speak()` call starts) from the original `speechSynthesis.cancel()` design, translated to `HTMLAudioElement.pause()`.
+  Why: preserves the same "a new beat interrupts a still-talking old one" behavior the partner's original `speak.js` established — no reason to change behavior just because the underlying playback mechanism changed from browser TTS to fetched audio blobs.
+- Decision: widened the `speakLeadSeconds` slider range in both `index.html`/`demo.html` (was capped at 0.5, new default 0.9 would've been clamped) — same recurring pattern as the `botRadius`/eye slider ranges earlier in this session whenever a CONFIG default moves past its slider's original bounds.
+
+**Files Changed:** `speak.js` (rewritten: Cartesia `/tts/bytes` call replacing `window.speechSynthesis`, `localStorage` key `oof_cartesia_api_key` + `prompt()` for the key, same interrupt-on-new-beat behavior), `physics.js` (`speakLeadSeconds` 0.15→0.9), `index.html` + `demo.html` (`speakLeadSeconds` slider range widened to 0-1.5)
+
+**Backtrack Notes:** To revert to browser TTS, restore the prior `speak.js` version from the "Reconciled with partner's independent beats.js/speak.js" WORKLOG entry and set `speakLeadSeconds` back to 0.15 — no other file depends on which TTS backend `speak.js` uses internally, only on `window.Speak.speak(line)` existing (unchanged) and the `window.speak = window.Speak.speak` shim in `index.html` (unchanged). Network failures (bad key, rate limit, offline) are caught and logged via `console.warn` — TTS silently no-ops rather than breaking the fight playback, matching the graceful-degradation pattern used everywhere else in this project (sprites, live beat generation).

@@ -23,7 +23,7 @@ export const CONFIG = {
   squashDecayRate: 12,
   cameraShakeMax: 16,
   cameraShakeDecayRate: 10,
-  speakLeadSeconds: 0.15,
+  speakLeadSeconds: 0.9,
   renderFps: 12,
 }
 

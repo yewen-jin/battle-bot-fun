@@ -1,33 +1,65 @@
-// Stream A - TTS wrapper around window.speechSynthesis.
-// Gotcha handled: getVoices() returns [] on first call; wait for `voiceschanged`.
+// Stream A - TTS wrapper, now backed by Cartesia's cloud TTS API instead of
+// window.speechSynthesis. Voice: "Clive - Measured Expert" (composed,
+// articulate) - matches the PRD's "straight, serious broadcast voice" brief.
+//
+// Measured round-trip latency ~0.7s for a typical commentary line (network
+// TTS is not instant like the old browser speechSynthesis path) - see
+// physics.js's CONFIG.speakLeadSeconds, bumped up accordingly so audio
+// doesn't land after the impulse it's describing.
+
+const CARTESIA_VOICE_ID = "b24f41fd-00a3-4cd8-992a-a0c9f13f3ef1"; // Clive - Measured Expert
+const CARTESIA_MODEL = "sonic-3.5";
 
 const Speak = (() => {
-  let voice = null;
-  let ready = false;
+  let currentAudio = null;
 
-  function pickVoice() {
-    const voices = window.speechSynthesis.getVoices();
-    if (!voices.length) return;
-    // Prefer a deep-ish English voice for broadcast feel; fall back to any English, then first.
-    voice =
-      voices.find((v) => /en[-_]US/i.test(v.lang) && /male|daniel|alex|fred/i.test(v.name)) ||
-      voices.find((v) => /^en/i.test(v.lang)) ||
-      voices[0];
-    ready = true;
+  function getApiKey() {
+    let key = localStorage.getItem("oof_cartesia_api_key");
+    if (!key) {
+      key = prompt("Cartesia API key (stored in localStorage):");
+      if (key) localStorage.setItem("oof_cartesia_api_key", key.trim());
+    }
+    return key;
   }
 
-  pickVoice();
-  window.speechSynthesis.addEventListener("voiceschanged", pickVoice);
+  async function speak(line) {
+    const apiKey = getApiKey();
+    if (!apiKey) return;
 
-  // Fire ~150ms before the impulse (PRD merge protocol step 3): ears forgive early, not late.
-  function speak(line) {
-    if (!("speechSynthesis" in window)) return;
-    const u = new SpeechSynthesisUtterance(line);
-    if (ready && voice) u.voice = voice;
-    u.rate = 1.15; // sports-commentary urgency
-    u.pitch = 1.0;
-    window.speechSynthesis.cancel(); // a new beat interrupts a still-talking old one
-    window.speechSynthesis.speak(u);
+    // A new beat interrupts a still-talking old one (same semantics as the
+    // old speechSynthesis.cancel() call).
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio = null;
+    }
+
+    try {
+      const resp = await fetch("https://api.cartesia.ai/tts/bytes", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "Authorization": `Bearer ${apiKey}`,
+          "Cartesia-Version": "2026-03-01",
+        },
+        body: JSON.stringify({
+          model_id: CARTESIA_MODEL,
+          transcript: line,
+          voice: { mode: "id", id: CARTESIA_VOICE_ID },
+          output_format: { container: "wav", encoding: "pcm_s16le", sample_rate: 44100 },
+          language: "en",
+        }),
+      });
+      if (!resp.ok) throw new Error(`Cartesia TTS ${resp.status}: ${await resp.text()}`);
+
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      audio.addEventListener("ended", () => URL.revokeObjectURL(url));
+      currentAudio = audio;
+      await audio.play();
+    } catch (e) {
+      console.warn("Cartesia TTS failed:", e);
+    }
   }
 
   return { speak };
