@@ -466,3 +466,37 @@ While re-verifying live, discovered a second, separate bug: **the diagnostic Pyt
 **Files Changed:** `physics.js` (`snapToContact()` export), `runner.js` (import + one call right before impulse application)
 
 **Backtrack Notes:** Remove the `snapToContact(bodies[0], bodies[1])` call in `runner.js`'s impulse loop and the export in `physics.js` to revert — bots go back to being wherever momentum left them when a beat fires.
+
+## [T+~140] Remaining 11 bot sprites landed — roster is 24/24
+
+**Status:** completed
+
+**Summary:** The 11 bots flagged as still-pending in the "Integrated 13 externally-generated bot sprites" entry (Bloodsport, DeathRoll, End Game, Golden Fury, HUGE, HyperShock, Minotaur, Orbitron, Ribbot, Switchback, Witch Doctor) have all landed in `media/bots/` — confirmed by listing the directory (24 files, one per bot) and spot-checking alpha transparency on all 11 (`RGBA`, 61.6-75.2% transparent pixels, consistent with the 55-66% band measured on the first 13). Unlike the first batch, these arrived already alpha-transparent — no `sprites/pixel/` raw backup exists for these 11, meaning either the generation step itself produced a transparent background this time or the chroma-key step ran without the backup-first pattern from the earlier entry. No code changes were needed: `render.js`'s existing `loadSprite()`/fallback-to-blob mechanism already picks up any correctly-named file in `media/bots/` automatically, same as the first 13.
+
+**Decisions & Reasoning:**
+- Decision: verified transparency empirically (Pillow alpha-channel check on all 11) rather than assuming the drop-in was correct just because the filenames matched.
+  Why: the first batch's WORKLOG entry documented a real white-background bug that needed a fix — worth confirming that failure mode didn't recur before declaring the roster done.
+- Decision: did not attempt to backfill `sprites/pixel/<slug>.png` raw backups for these 11.
+  Why: the backup's purpose (per the earlier entry) was insurance in case the chroma-key threshold needed reprocessing — these files are already transparent with no chroma-key step applied by this session, so there's no raw pre-processed version to back up.
+
+**Files Changed:** `media/bots/{bloodsport,deathroll,end-game,golden-fury,huge,hypershock,minotaur,orbitron,ribbot,switchback,witch-doctor}.png` (already committed in `e1b15da`, confirmed present)
+
+**Backtrack Notes:** Purely a confirmation entry — no code or asset changes made. If any of these 11 sprites is ever wrong (bad transparency, wrong bot), regenerate per `image-gen.md`'s brief and drop the replacement into `media/bots/<slug>.png`; nothing else needs to change.
+
+## [T+~145] Updated PRD.md to reflect the shipped build, post-hackathon
+
+**Status:** completed
+
+**Summary:** User confirmed the hackathon build is done and asked to update `PRD.md` (originally a pre-build spec, never revised since) to describe what actually shipped, as the baseline for a "what's next" planning discussion. Went section by section against the current code (`physics.js` CONFIG, `prompts/beats_system.txt`, `beats.js`'s `validate()`, `speak.js`) rather than from memory. Key corrections: success criteria 1 and 4 marked superseded (network-free and 45s targets both broken by the TTS provider swap to Cartesia — struck through with the reason, not silently deleted); world-units table's `botRadius` updated 7→20; beat-timing rules updated to the real 4.0-4.5s target gap / 70-130s duration / 140s validator cap (0.8s kept as the documented safety floor, not the target); §3 rewritten for the Anthropic→OpenAI and browser-TTS→Cartesia swaps, including *why* each happened; §4 gained writeups for `snapToContact()`, bot-vs-bot collision, and the sprite/arena-image system, framed as additions beyond the original spec; §8's Out list moved sprite art and simple bot-collision into "no longer out — shipped mid-build, by explicit approval" rather than just deleting the old boundary; §10 relabeled from a wishlist into the live roadmap section, with a short list of open threads (no zero-network fallback, decoupled fight duration, the 11-bot backup gap, the unresolved physics complaint) for the next planning conversation to pick up.
+
+**Decisions & Reasoning:**
+- Decision: struck through superseded lines with the old text still visible, rather than deleting and replacing them cleanly.
+  Why: the PRD's own template elsewhere (`CLAUDE.md`'s WORKLOG convention) treats a reverted decision as `Status: reverted`, not removed — same principle applied here: readers should be able to see what was originally promised and why it changed, not just the current state.
+- Decision: re-derived every changed number from the actual files (`grep`'d `physics.js`, read `beats.js`'s `validate()`, read `prompts/beats_system.txt`) instead of trusting the prior conversation's summary of them.
+  Why: a spec document is exactly the place where a stale or slightly-off number does real damage later (per this project's own memory practice of verifying claims before acting on them) — worth the extra few tool calls to confirm against source.
+- Decision: kept §5-7 (timeline/merge protocol/tuning pass) largely as originally written, adding only a short historical note, rather than rewriting them to match the actual T+140 timeline.
+  Why: the *process* they describe (merge-then-verify-then-tune) was followed correctly per WORKLOG's own record — only the clock was off. Rewriting a timeline that was correctly abandoned would lose the "why 2h and not more" reasoning that's still valid advice for a future sprint.
+
+**Files Changed:** `PRD.md` (all sections except §2's schema/impulse-scale table, which remains unchanged as designed)
+
+**Backtrack Notes:** No code changed, spec-only. If any of the "superseded" framing turns out wrong on review, the original text is preserved inline (struck through, not deleted) so reverting to the original criterion is a matter of removing the strikethrough/annotation, not reconstructing lost text.
