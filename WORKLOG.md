@@ -434,3 +434,20 @@ While re-verifying live, discovered a second, separate bug: **the diagnostic Pyt
 **Files Changed:** `devserver.py` (created), `index.html`/`demo.html`/`preview.html` (reverted the query-string experiment back to plain import paths — net no-op on these three files relative to before this entry), `CLAUDE.md` (launch instructions updated)
 
 **Backtrack Notes:** To go back to the bare stdlib server, just run `python3 -m http.server 8000` instead of `python3 devserver.py` — no file changes needed to revert, `devserver.py` is purely additive. If `Cache-Control: no-store` ever causes a *different* problem (e.g. wanting to test actual cache behavior), the one line to change is in `devserver.py`'s `end_headers()`.
+
+## [T+~135] Bot-vs-bot rigid body collisions + audio queue fix (no more overlap, no more cut-off lines)
+
+**Status:** completed
+
+**Summary:** User reported three issues after a play test: (1) physics doesn't match the description (vague, not yet actionable — need a concrete example), (2) bots overlap each other instead of colliding as rigid bodies, (3) commentary lines sometimes cut off before finishing. Fixed (2) and (3); (1) still needs a specific repro from the user before it can be addressed.
+
+**Decisions & Reasoning:**
+- Decision: bot-vs-bot collision added as a new `resolveBotCollisions(bodies)` pass in `physics.js`, called once per `step()` after all bodies have been individually stepped (floor/wall/gravity), rather than folding it into `stepBody()`.
+  Why: floor/wall collision is single-body and local; bot-vs-bot is inherently pairwise (needs both bodies at once), so it has to run as a separate O(n²) pass over the full body list after positions are updated. With only 2 bots on screen this is trivial cost. Since every body shares `CONFIG.botRadius`, it's plain circle-vs-circle: push apart along the contact normal by the overlap amount, then apply a restitution bounce (reusing the existing `wallRestitution`-style formula) along that same normal — added `botRestitution: 0.60` to CONFIG so it's tunable independently, wired into both `index.html` and `demo.html`'s live slider panels. Impact also triggers the existing squash-on-hit visual, same as floor/wall, for consistency.
+  Why not a full physics engine: scope is 2 bots, same fixed radius, no rotation-dependent collision shape — a general solver would be strictly more code for zero visible difference.
+- Decision: rewrote `speak.js`'s `Speak.speak()` from an interrupt-on-new-call pattern (`currentAudio.pause()`) to a promise-chain queue (`queue = queue.then(() => playLine(line))`).
+  Why: the interrupt pattern was a leftover from the old browser `speechSynthesis.cancel()` semantics (appropriate when speech is synchronous and local) — it doesn't fit Cartesia's model of "fetch audio, then play a clip to completion." With beats now spaced 4.0-4.5s apart (see the pacing fix a few entries up) each line has enough room to finish, but the interrupt logic would still cut a slightly-longer line off if the next beat's lead-time fired first. A promise chain guarantees strict sequencing: line N's audio (`ended` or `error` event) always resolves before line N+1 starts fetching/playing, with no explicit interrupt needed. Added an `error` listener alongside `ended` so a failed/aborted clip doesn't stall the queue forever.
+
+**Files Changed:** `physics.js` (`botRestitution` CONFIG key, `resolveBotCollisions()`, called from `step()`), `index.html` + `demo.html` (`botRestitution` slider entry), `speak.js` (interrupt → sequential queue)
+
+**Backtrack Notes:** To revert collision: delete the `resolveBotCollisions()` call in `step()` (function definition can stay dead) and the `botRestitution` CONFIG key/sliders. To revert the audio queue: restore the `let currentAudio` + pause-on-new-call pattern from git history (`speak.js` before this entry).

@@ -11,7 +11,10 @@ const CARTESIA_VOICE_ID = "b24f41fd-00a3-4cd8-992a-a0c9f13f3ef1"; // Clive - Mea
 const CARTESIA_MODEL = "sonic-3.5";
 
 const Speak = (() => {
-  let currentAudio = null;
+  // Beats are queued rather than interrupted: each line plays to completion
+  // (or fails) before the next one starts speaking, so commentary never gets
+  // cut off mid-sentence even if beats arrive close together.
+  let queue = Promise.resolve();
 
   function getApiKey() {
     let key = localStorage.getItem("oof_cartesia_api_key");
@@ -22,44 +25,49 @@ const Speak = (() => {
     return key;
   }
 
-  async function speak(line) {
-    const apiKey = getApiKey();
-    if (!apiKey) return;
+  function playLine(line) {
+    return new Promise(async (resolve) => {
+      const apiKey = getApiKey();
+      if (!apiKey) return resolve();
 
-    // A new beat interrupts a still-talking old one (same semantics as the
-    // old speechSynthesis.cancel() call).
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio = null;
-    }
+      try {
+        const resp = await fetch("https://api.cartesia.ai/tts/bytes", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${apiKey}`,
+            "Cartesia-Version": "2026-03-01",
+          },
+          body: JSON.stringify({
+            model_id: CARTESIA_MODEL,
+            transcript: line,
+            voice: { mode: "id", id: CARTESIA_VOICE_ID },
+            output_format: { container: "wav", encoding: "pcm_s16le", sample_rate: 44100 },
+            language: "en",
+          }),
+        });
+        if (!resp.ok) throw new Error(`Cartesia TTS ${resp.status}: ${await resp.text()}`);
 
-    try {
-      const resp = await fetch("https://api.cartesia.ai/tts/bytes", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          "Authorization": `Bearer ${apiKey}`,
-          "Cartesia-Version": "2026-03-01",
-        },
-        body: JSON.stringify({
-          model_id: CARTESIA_MODEL,
-          transcript: line,
-          voice: { mode: "id", id: CARTESIA_VOICE_ID },
-          output_format: { container: "wav", encoding: "pcm_s16le", sample_rate: 44100 },
-          language: "en",
-        }),
-      });
-      if (!resp.ok) throw new Error(`Cartesia TTS ${resp.status}: ${await resp.text()}`);
+        const blob = await resp.blob();
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        const done = () => {
+          URL.revokeObjectURL(url);
+          resolve();
+        };
+        audio.addEventListener("ended", done);
+        audio.addEventListener("error", done);
+        await audio.play();
+      } catch (e) {
+        console.warn("Cartesia TTS failed:", e);
+        resolve();
+      }
+    });
+  }
 
-      const blob = await resp.blob();
-      const url = URL.createObjectURL(blob);
-      const audio = new Audio(url);
-      audio.addEventListener("ended", () => URL.revokeObjectURL(url));
-      currentAudio = audio;
-      await audio.play();
-    } catch (e) {
-      console.warn("Cartesia TTS failed:", e);
-    }
+  function speak(line) {
+    queue = queue.then(() => playLine(line));
+    return queue;
   }
 
   return { speak };
