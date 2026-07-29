@@ -21,11 +21,15 @@ import os
 import sys
 import time
 from pathlib import Path
+from urllib.parse import quote
 
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 API_KEY = os.environ.get("BRIGHTDATA_API_KEY")
-ZONE = os.environ.get("BRIGHTDATA_UNLOCKER_ZONE", "cli_unlocker")
+ZONE = os.environ.get("BRIGHTDATA_UNLOCKER_ZONE") or os.environ.get("BRIGHTDATA_ZONE", "cli_unlocker")
 if not API_KEY:
     sys.exit("Set BRIGHTDATA_API_KEY first")
 
@@ -33,7 +37,10 @@ OUT = Path("sprites/source")
 OUT.mkdir(parents=True, exist_ok=True)
 
 groups = json.loads(Path("raw/groups.json").read_text())
-ALL_BOTS = [b for g in groups.values() for b in g]
+# raw/groups.json has two possible shapes depending on which scraper wrote it:
+# the newer {season, groups, bots, matchups} shape (real Stream A scrape) has a
+# ready-made flat "bots" list; the older flat {groupLetter: [bots]} shape needs flattening.
+ALL_BOTS = groups["bots"] if isinstance(groups, dict) and "bots" in groups else [b for g in groups.values() for b in g]
 
 # Optional CLI filter -- start with two, not twenty-four.
 wanted = sys.argv[1:] or ALL_BOTS
@@ -63,7 +70,7 @@ def lead_images(titles: list[str]) -> dict[str, str]:
         url = (
             "https://battlebots.fandom.com/api.php"
             "?action=query&prop=pageimages&piprop=original"
-            f"&format=json&redirects=1&titles={joined}"
+            f"&format=json&redirects=1&titles={quote(joined, safe='')}"
         )
         try:
             data = json.loads(unlock(url))

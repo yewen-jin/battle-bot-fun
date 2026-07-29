@@ -1,0 +1,10 @@
+{
+  "Minotaur": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/1/19/Minotaur_Pro_League_2026.png/revision/latest?cb=20260601191227",
+    "file": "sprites/source/Minotaur.png"
+  },
+  "Tombstone": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/8/83/Tombstone_Pro_League_2026.png/revision/latest?cb=20260601190242",
+    "file": "sprites/source/Tombstone.png"
+  }
+}

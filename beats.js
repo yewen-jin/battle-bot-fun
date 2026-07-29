@@ -1,4 +1,4 @@
-// Stream A - beat generation: fight history -> one Anthropic API call -> validated beat array.
+// Stream A - beat generation: fight history -> one OpenAI API call -> validated beat array.
 // Depends on data/data.js (window.OOF_DATA, window.OOF_SYSTEM_PROMPT) loaded first.
 // Fallback chain: generate -> retry once -> sample_beats.json (window.OOF_SAMPLE_BEATS).
 
@@ -74,10 +74,10 @@ const Beats = (() => {
   // --- API call -----------------------------------------------------------
 
   function getApiKey() {
-    let key = localStorage.getItem("oof_api_key");
+    let key = localStorage.getItem("oof_openai_api_key");
     if (!key) {
-      key = prompt("Anthropic API key (stored in localStorage):");
-      if (key) localStorage.setItem("oof_api_key", key.trim());
+      key = prompt("OpenAI API key (stored in localStorage):");
+      if (key) localStorage.setItem("oof_openai_api_key", key.trim());
     }
     return key;
   }
@@ -93,28 +93,26 @@ const Beats = (() => {
       botSummary(botB),
     ].join("\n");
 
-    const resp = await fetch("https://api.anthropic.com/v1/messages", {
+    const resp = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "x-api-key": getApiKey(),
-        "anthropic-version": "2023-06-01",
-        "anthropic-dangerous-direct-browser-access": "true",
+        "authorization": `Bearer ${getApiKey()}`,
       },
       body: JSON.stringify({
-        model: "claude-opus-5",
-        max_tokens: 8000,
-        system: window.OOF_SYSTEM_PROMPT,
-        messages: [{ role: "user", content: userMsg }],
+        model: "gpt-5.5",
+        messages: [
+          { role: "system", content: window.OOF_SYSTEM_PROMPT },
+          { role: "user", content: userMsg },
+        ],
       }),
     });
     if (!resp.ok) throw new Error(`API ${resp.status}: ${await resp.text()}`);
     const data = await resp.json();
-    if (data.stop_reason === "refusal") throw new Error("model refused");
-    let text = (data.content || [])
-      .filter((b) => b.type === "text")
-      .map((b) => b.text)
-      .join("");
+    const choice = data.choices && data.choices[0];
+    if (!choice) throw new Error("no choices in response");
+    if (choice.finish_reason === "content_filter") throw new Error("model refused (content filter)");
+    let text = (choice.message && choice.message.content) || "";
     // Strip fences defensively even though the prompt forbids them
     text = text.trim().replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/, "");
     return JSON.parse(text);
