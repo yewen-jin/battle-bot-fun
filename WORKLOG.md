@@ -310,3 +310,20 @@ Given (2) confirmed 5 real *text* models were accessible, pivoted to using this 
 **Files Changed:** `image-gen.md` (created), `sprites/source/*.png` (22 new bot reference photos, completing the roster to 24/24), `sprites/manifest.json` (updated with all 24 entries)
 
 **Backtrack Notes:** Purely additive — `image-gen.md` is documentation, the sprite photos are cached scrape output reproducible by re-running `image-scripts/4_images.py`. Nothing else in the repo reads `image-gen.md` or depends on it existing.
+
+## [T+~105] Integrated 13 externally-generated bot sprites (transparency fix)
+
+**Status:** completed
+
+**Summary:** User generated bot sprite art externally per `image-gen.md`'s brief (via Google Antigravity, waiting on image-gen credit to reset for the rest) and dropped 13 of them straight into `media/bots/<slug>.png` with exactly the right filenames — no wiring needed on that front, `render.js`'s existing `loadSprite()`/fallback-to-blob mechanism already picks them up per-bot automatically. One real issue: every generated image had a solid white background (`RGB` mode, no alpha) rather than transparent — would have rendered as a white square behind the robot silhouette against the game's dark arena instead of blending in. Fixed by chroma-keying near-white pixels (`r,g,b > 240`) to transparent via Pillow, backing up each raw generated image to `sprites/pixel/<slug>.png` first (matching the pipeline's originally-documented convention). Verified: alpha-channel transparency percentage across all 13 lands in a consistent 55-66% band (centered robot silhouette against transparent background, no outliers/failures), and visually spot-checked Manta and Tombstone directly — both faithful to style brief, googly eyes will composite on top per the existing `drawBody()`/`drawEyes()` render order (unconditional, sprite-or-blob doesn't change eye drawing).
+
+**Decisions & Reasoning:**
+- Decision: backed up each raw (white-background) generated image to `sprites/pixel/<slug>.png` before overwriting `media/bots/<slug>.png` with the transparent version.
+  Why: non-destructive — if the chroma-key threshold ever needs adjusting (e.g. a sprite with white paint on the robot itself getting incorrectly keyed out), the original is still there to reprocess from, rather than needing to regenerate via the image API again.
+  Alternatives considered: processing in place with no backup — rejected, cheap insurance against a lossy one-way edit.
+- Decision: used a simple brightness threshold (`r,g,b > 240`) for the chroma key rather than a more sophisticated background-removal approach (flood-fill from corners, edge detection, etc.).
+  Why: the generation prompt explicitly asked for a plain white background with no gradients, and the outline is bold dark navy — a flat threshold cleanly separates the two color regimes for this art style without needing anything fancier. Spot-checked visually (Tombstone, Manta) and via alpha-percentage sanity check across all 13; no artifacts observed.
+
+**Files Changed:** `media/bots/{manta,tombstone,cobalt,copperhead,disarray,jackpot,madcatter,magnitude,malice,skorpios,terrortops,the-twins,valkyrie}.png` (background stripped to transparent, in place), `sprites/pixel/*.png` (13 raw pre-transparency backups, new)
+
+**Backtrack Notes:** Fully reversible per-file — copy the matching `sprites/pixel/<slug>.png` back over `media/bots/<slug>.png` to restore the raw white-background version. 11 bots still pending external generation (Bloodsport, DeathRoll, End Game, Golden Fury, HUGE, HyperShock, Minotaur, Orbitron, Ribbot, Switchback, Witch Doctor) — those fall back to plain colored blobs until generated, exactly per the sprite-hook's original graceful-degradation design.
