@@ -48,7 +48,7 @@
 <script src="./speak.js?v=2"></script>
 <script type="module">
 import { CONFIG, createBody } from './physics.js';
-import { createCanvasPair, loadSprite } from './render.js';
+import { createCanvasPair, loadSprite, loadArenaBackground } from './render.js';
 import { runFight } from './runner.js';
 
 // beats.js/speak.js are Stream A's classic (non-module) scripts, loaded above —
@@ -57,6 +57,7 @@ import { runFight } from './runner.js';
 window.speak = window.Speak.speak;
 
 const pair = createCanvasPair(document.getElementById('canvasHost'));
+loadArenaBackground(pair);
 const captionEl = document.getElementById('caption');
 const pickerNoteEl = document.getElementById('pickerNote');
 const botASelect = document.getElementById('botASelect');

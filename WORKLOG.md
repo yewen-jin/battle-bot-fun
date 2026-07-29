@@ -402,3 +402,19 @@ While re-verifying live, discovered a second, separate bug: **the diagnostic Pyt
 **Files Changed:** `prompts/beats_system.txt` (gap target 2.0-2.2s → 4.0-4.5s, duration 30-45s → 70-130s), `beats.js` (validator duration cap 45→140s), `index.html` (cache-busting `?v=2` on the three classic `<script src>` tags)
 
 **Backtrack Notes:** All plain-text/constant changes, trivially revertable per the values quoted above. The diagnostic-script bug has no backtrack — it only affected throwaway `/tmp` scripts, never committed, never part of the actual app.
+
+## [T+~120] Wired the arena background image (user generated it externally)
+
+**Status:** completed
+
+**Summary:** User dropped `media/arena.png` in directly (generated externally per `image-gen.md`'s brief — axonometric 45°, matches the actual world proportions: 1600×900 is exactly 10× the 160×90 world, no distortion needed when scaled down). This was the one piece `image-gen.md` explicitly flagged as "not wired yet" — did that follow-up now. `render.js`: `createCanvasPair()` now returns an `arenaImage: null` field on the pair object, plus a new `loadArenaBackground(pair)` export that sets it once the image loads (mirroring the existing per-body sprite-loading pattern exactly — same fire-and-forget, same graceful fallback). `renderFrame()` draws the arena image scaled to fill the offscreen buffer if present, falling back to the original flat `CONFIG.palette[0]` fill otherwise. Wired into all three HTML entry points (`index.html`, `demo.html`, `preview.html`) with one import + one function call each — zero changes needed to `runner.js`, since the image lives on the `pair` object `runFight()` already threads through to `renderFrame()` unchanged.
+
+**Decisions & Reasoning:**
+- Decision: stored `arenaImage` as a mutable field on the existing `pair` object (returned by `createCanvasPair`) rather than adding a new parameter to `renderFrame()`/`runFight()`.
+  Why: zero signature changes needed anywhere `runFight()` is called from — `runner.js` already passes the whole `pair` object through to `renderFrame()` untouched, so a new field on that object "just arrives" without threading a new argument through an extra layer. Exactly the same design already used for `body.sprite`.
+- Decision: added it to `demo.html` too, despite that file's "zero network dependency" design goal.
+  Why: on reflection, `demo.html`'s zero-network guarantee was specifically about not depending on a third-party API that can fail independently (the original problem: an Anthropic/OpenAI call over the open internet) — it already loads its own JS files and could already load sprite images from the same local server. A same-origin local image request carries the same reliability as the page load itself; if the local server is down, nothing loads regardless. Not a violation of the actual intent behind that design goal.
+
+**Files Changed:** `render.js` (`arenaImage` field + `loadArenaBackground()` export, `renderFrame()` draws it when present), `index.html` + `demo.html` + `preview.html` (import + one-line call each), `media/arena.png` (user-provided, committed)
+
+**Backtrack Notes:** Fully backward compatible — if `media/arena.png` is ever removed or fails to load, `arenaImage` stays `null` and `renderFrame()` falls back to the exact flat-fill behavior verified throughout this whole project, no code changes needed either way.

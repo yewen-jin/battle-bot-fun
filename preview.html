@@ -12,7 +12,7 @@
 <div id="caption">loading…</div>
 <script type="module">
 import { CONFIG, createBody } from './physics.js';
-import { createCanvasPair, loadSprite } from './render.js';
+import { createCanvasPair, loadSprite, loadArenaBackground } from './render.js';
 import { runFight } from './runner.js';
 
 const bodyA = createBody(60, 50, CONFIG.palette[1]);
@@ -26,6 +26,7 @@ for (const body of bodies) {
 }
 
 const pair = createCanvasPair(document.body);
+loadArenaBackground(pair);
 const captionEl = document.getElementById('caption');
 const targetMap = { a: [bodyA], b: [bodyB], both: [bodyA, bodyB] };
 

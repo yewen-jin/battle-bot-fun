@@ -13,7 +13,15 @@ export function createCanvasPair(mountEl) {
   mountEl.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 
-  return { offCanvas, offCtx, canvas, ctx };
+  return { offCanvas, offCtx, canvas, ctx, arenaImage: null };
+}
+
+// Optional arena background — falls back to a flat fill (CONFIG.palette[0])
+// in renderFrame() if this never resolves or media/arena.png doesn't exist.
+export function loadArenaBackground(pair) {
+  const img = new Image();
+  img.onload = () => { pair.arenaImage = img; };
+  img.src = './media/arena.png';
 }
 
 function quantizeAngle(angle) {
@@ -98,10 +106,14 @@ export function loadSprite(name) {
   });
 }
 
-export function renderFrame({ offCanvas, offCtx, canvas, ctx }, bodies) {
+export function renderFrame({ offCanvas, offCtx, canvas, ctx, arenaImage }, bodies) {
   offCtx.clearRect(0, 0, offCanvas.width, offCanvas.height);
-  offCtx.fillStyle = CONFIG.palette[0];
-  offCtx.fillRect(0, 0, offCanvas.width, offCanvas.height);
+  if (arenaImage) {
+    offCtx.drawImage(arenaImage, 0, 0, offCanvas.width, offCanvas.height);
+  } else {
+    offCtx.fillStyle = CONFIG.palette[0];
+    offCtx.fillRect(0, 0, offCanvas.width, offCanvas.height);
+  }
 
   for (const body of bodies) {
     drawBody(offCtx, body);
