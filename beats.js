@@ -67,7 +67,7 @@ const Beats = (() => {
     if (last && last.shake !== 1.0) errs.push("final beat shake != 1.0");
     if (last && fight && last.target !== (fight.winner === "a" ? "b" : "a"))
       errs.push("final beat target is not the loser");
-    if (prev > 45 + 0.001) errs.push(`duration ${prev.toFixed(1)}s > 45s`);
+    if (prev > 140 + 0.001) errs.push(`duration ${prev.toFixed(1)}s > 140s`);
     return errs;
   }
 

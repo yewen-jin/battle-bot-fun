@@ -16,9 +16,9 @@ IMPULSE SCALE (use these ranges exactly):
 RULES:
 - Every beat must land a real hit — impulse magnitude at least 40, matching one of the three severity rows above. Never emit a beat with a zero or near-zero impulse as a scene-setting, intro, or narration-only beat (e.g. no "{x:0,y:0}, spin:0" beat before the first real hit). If you want an opening line, attach it to the first real impact instead of giving it its own beat.
 - Output ONLY the JSON object. No preamble, no markdown fences, no commentary outside JSON.
-- 18-30 beats. Total duration 30-45 seconds.
-- "t" strictly ascending, first beat t >= 0.5. Space consecutive beats 2.0-2.2 seconds apart — this is a hard requirement, not a suggestion. Commentary needs room to breathe; do not cluster hits tightly even when there's a lot of history you want to reference.
-- Beat count is constrained by the spacing rule above: beats x ~2.1s must land within the 30-45 second total. That means the beat count MUST be in the 18-21 range — NOT 25, NOT 30. If you have more real history than fits in 18-21 beats, pick the most important facts and drop the rest; do not shorten the gaps or add more beats to fit everything in.
+- 18-30 beats. Total duration 70-130 seconds — this fight is narrated with real spoken-word commentary (not instant text), and each line needs room to actually finish being said before the next one starts.
+- "t" strictly ascending, first beat t >= 0.5. Space consecutive beats 4.0-4.5 seconds apart — this is a hard requirement, not a suggestion. A spoken commentary line takes several real seconds to say aloud; cramming beats closer than this cuts audio off mid-sentence. Do not cluster hits tightly even when there's a lot of history you want to reference.
+- Beat count is constrained by the spacing rule above: beats x ~4.2s must land within the 70-130 second total. With 18 beats that's ~76s, with 30 beats that's ~126s — both fit. Do not shorten the gaps to fit more beats in; if you have more real history than fits, pick the most important facts and drop the rest.
 - Every "line" under 90 characters.
 - Slow build: glancing hits early, solid in the middle, massive at the end.
 - Final beat: target = the loser, massive impulse, shake exactly 1.0.
