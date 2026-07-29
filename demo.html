@@ -10,7 +10,8 @@
   #canvasHost { max-width: 100%; }
   #caption { white-space: pre; text-align: center; min-height: 2.4em; }
   #panel { width: 280px; flex-shrink: 0; max-height: 100vh; overflow-y: auto; padding: 12px; background: #1a1a2e; box-sizing: border-box; }
-  #panel h2 { font-size: 13px; margin: 0 0 8px; }
+  #panel summary { font-size: 13px; margin: 0 0 8px; cursor: pointer; user-select: none; }
+  #panel summary:hover { color: #e94560; }
   .row { display: flex; flex-direction: column; margin-bottom: 6px; }
   .row label { display: flex; justify-content: space-between; font-size: 11px; opacity: 0.85; }
   .row input[type=range] { width: 100%; }
@@ -23,8 +24,10 @@
   <div id="caption">loading…</div>
 </div>
 <div id="panel">
-  <h2>CONFIG (live)</h2>
-  <div id="sliders"></div>
+  <details open>
+    <summary>CONFIG (live)</summary>
+    <div id="sliders"></div>
+  </details>
 </div>
 
 <!--
@@ -86,16 +89,16 @@ const SLIDERS = [
   ['wallRestitution', 0.1, 0.9, 0.01],
   ['groundDampingLinear', 0.3, 1.0, 0.01],
   ['groundDampingAngular', 0.3, 1.0, 0.01],
-  ['botRadius', 3, 14, 0.5],
+  ['botRadius', 3, 30, 0.5],
   ['rotationQuantizeDeg', 1, 45, 1],
   ['eyeStiffness', 10, 300, 5],
   ['eyeDamping', 0, 40, 0.5],
   ['eyeAccelGain', 0, 0.1, 0.001],
-  ['eyeClampRadius', 0.5, 5, 0.1],
-  ['eyeSocketRadius', 1, 5, 0.1],
-  ['pupilRadius', 0.3, 3, 0.1],
-  ['eyeOffsetX', 0, 6, 0.1],
-  ['eyeOffsetY', -6, 0, 0.1],
+  ['eyeClampRadius', 0.5, 10, 0.1],
+  ['eyeSocketRadius', 1, 10, 0.1],
+  ['pupilRadius', 0.3, 6, 0.1],
+  ['eyeOffsetX', 0, 12, 0.1],
+  ['eyeOffsetY', -12, 0, 0.1],
   ['squashCoefficient', 0, 0.01, 0.0001],
   ['squashMax', 0, 0.9, 0.01],
   ['squashDecayRate', 1, 40, 1],
