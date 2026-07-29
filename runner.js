@@ -1,4 +1,4 @@
-import { applyImpulse, step, FIXED_DT, CONFIG } from './physics.js';
+import { applyImpulse, snapToContact, step, FIXED_DT, CONFIG } from './physics.js';
 import { renderFrame } from './render.js';
 
 function speak(line) {
@@ -37,6 +37,7 @@ export function runFight(fight, bodies, targetMap, canvasPair, captionEl) {
 
       while (impulseIdx < beats.length && beats[impulseIdx].t <= elapsed) {
         const beat = beats[impulseIdx];
+        if (bodies.length === 2) snapToContact(bodies[0], bodies[1]);
         for (const body of targetMap[beat.target]) {
           applyImpulse(body, beat.impulse, beat.spin);
         }

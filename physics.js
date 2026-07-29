@@ -47,6 +47,26 @@ export function applyImpulse(body, impulse, spin) {
   body.av += spin
 }
 
+// Beats describe hits by narration + impulse, with no guarantee the two bots
+// are anywhere near each other when the beat's time arrives (they drift
+// freely under gravity/wall bounces between beats). Called right before a
+// hit-beat's impulse is applied so the bodies are actually touching at the
+// moment the narration claims contact — pulls them together along their
+// current relative direction (a "clash" cut, not a teleport to a fixed spot).
+export function snapToContact(a, b) {
+  const dx = b.x - a.x
+  const dy = b.y - a.y
+  const dist = Math.hypot(dx, dy)
+  const nx = dist > 0.001 ? dx / dist : 1
+  const ny = dist > 0.001 ? dy / dist : 0
+  const midX = (a.x + b.x) / 2
+  const midY = (a.y + b.y) / 2
+  a.x = midX - nx * CONFIG.botRadius
+  a.y = midY - ny * CONFIG.botRadius
+  b.x = midX + nx * CONFIG.botRadius
+  b.y = midY + ny * CONFIG.botRadius
+}
+
 function updateEye(eye, localAx, localAy, dt) {
   eye.evx += (-CONFIG.eyeStiffness * eye.ex - CONFIG.eyeDamping * eye.evx - CONFIG.eyeAccelGain * localAx) * dt
   eye.evy += (-CONFIG.eyeStiffness * eye.ey - CONFIG.eyeDamping * eye.evy - CONFIG.eyeAccelGain * localAy) * dt

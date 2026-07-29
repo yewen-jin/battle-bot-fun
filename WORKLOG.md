@@ -451,3 +451,18 @@ While re-verifying live, discovered a second, separate bug: **the diagnostic Pyt
 **Files Changed:** `physics.js` (`botRestitution` CONFIG key, `resolveBotCollisions()`, called from `step()`), `index.html` + `demo.html` (`botRestitution` slider entry), `speak.js` (interrupt → sequential queue)
 
 **Backtrack Notes:** To revert collision: delete the `resolveBotCollisions()` call in `step()` (function definition can stay dead) and the `botRestitution` CONFIG key/sliders. To revert the audio queue: restore the `let currentAudio` + pause-on-new-call pattern from git history (`speak.js` before this entry).
+
+## [T+~140] Fixed "smashing but not touching" — narration/physics were decoupled
+
+**Status:** completed
+
+**Summary:** User's third physics complaint, now with a concrete repro: commentary describes a hit but the bots aren't anywhere near each other on screen. Root cause: beats only carry `{t, target, impulse, spin}` — they say "apply this impulse to this bot at this time," with no positional awareness. Between beats the two bodies drift independently under gravity/wall bounces, so by the time a hit-beat's `t` arrives there was no guarantee the bodies were close, let alone touching.
+
+**Decisions & Reasoning:**
+- Decision: added `snapToContact(a, b)` to `physics.js`, called from `runner.js` right before a beat's impulse is applied, pulling both bodies to exactly `botRadius*2` apart along their *current* relative direction (not a fixed position/side) — a clash cut, not a teleport.
+  Why: the beat schema (impulse-at-time, no position data) is immutable per the PRD, and reworking beats to carry positions or having the LLM reason about physics state was out of scope for the remaining time. Snapping to contact only at the instant of impact is invisible in normal play (it's masked by the existing camera shake + squash on that same frame) and guarantees the narration and the visual always agree at the one moment that matters.
+  Why preserve the existing relative direction rather than a fixed layout: keeps the bodies' approach look consistent (whoever was left stays left, etc.) instead of a jarring snap to some default position.
+
+**Files Changed:** `physics.js` (`snapToContact()` export), `runner.js` (import + one call right before impulse application)
+
+**Backtrack Notes:** Remove the `snapToContact(bodies[0], bodies[1])` call in `runner.js`'s impulse loop and the export in `physics.js` to revert — bots go back to being wherever momentum left them when a beat fires.
