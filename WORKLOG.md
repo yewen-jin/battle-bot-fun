@@ -292,3 +292,21 @@ Given (2) confirmed 5 real *text* models were accessible, pivoted to using this 
 **Files Changed:** `image-scripts/4_images.py` (added `load_dotenv()`, fixed `raw/groups.json` shape compatibility, percent-encoded the MediaWiki multi-title URL), `sprites/source/Tombstone.png`, `sprites/source/Minotaur.png` (downloaded reference photos, actually WebP bytes), `beats.js` (Anthropic → OpenAI: endpoint, auth header, request/response shape, `localStorage` key renamed, model `gpt-5.5`)
 
 **Backtrack Notes:** The `4_images.py` fixes are backward-compatible (still handles the old flat `groups.json` shape via the `isinstance`/`"bots" in groups` check) and don't affect anything else in the pipeline. The `beats.js` provider switch is a straightforward revert to the prior WORKLOG entry's Anthropic version if needed — no other file depends on which provider `beats.js` uses internally, only on its public `Beats.generate()`/`validate()`/`botSummary()` shape, which is unchanged. Image generation (sprites + arena) remains blocked pending either Google Cloud billing or a general-purpose (non-Codex) OpenAI key with image-model access — not something I can route around further without new credentials.
+
+## [T+~100] Downloaded all 24 reference photos, wrote image-gen.md for external generation
+
+**Status:** completed
+
+**Summary:** Ran the now-fixed `image-scripts/4_images.py` for all 24 bots (previously only tested on 2) — clean 24/24 download to `sprites/source/`. Since image-generation API access is still blocked on every credential tried so far, user opted to run generation externally via Google Antigravity instead of waiting on API billing/key access. Wrote `image-gen.md`: a self-contained brief with the exact tested sprite prompt (axonometric/45°-bird's-eye, flat colors, bold outline, sized for a small nearest-neighbor-upscaled icon), a new arena-background prompt (matching the PRD's exact world geometry — 160×90, floor at y=78, walls at x=8/152, 16:9), the full 24-bot roster grouped by group letter, and the exact output paths/naming convention (`media/bots/<slug>.png`, `media/arena.png`) so dropping results in is the only wiring needed.
+
+**Decisions & Reasoning:**
+- Decision: derived the arena prompt's geometry constraints directly from PRD Section 2's numbers (160×90 world, floor y=78, walls x=8/x=152, 16:9 aspect) rather than a generic "battle arena" description.
+  Why: if the generated background doesn't respect the actual world dimensions/margins, painted walls/floor lines won't align with where bots actually bounce in the physics sim — explicitly called out in the doc so whoever generates it (or reviews the result) knows what "correct" means here, not just "looks like an arena."
+- Decision: noted that `media/arena.png` wiring into `render.js` (replacing the flat fill background) is an explicit follow-up, not done yet.
+  Why: didn't want the doc to imply the code side is already handled — keeps the doc honest about what's actually wired vs. what's still a TODO.
+- Decision: ran the full 24-bot download proactively (rather than waiting to be asked) once `4_images.py` was confirmed working on the 2-bot test.
+  Why: removes a manual step between "here's the prompt" and "here's something to actually run it against" — the doc can point at complete, ready-to-use input files instead of a script the user still has to run themselves.
+
+**Files Changed:** `image-gen.md` (created), `sprites/source/*.png` (22 new bot reference photos, completing the roster to 24/24), `sprites/manifest.json` (updated with all 24 entries)
+
+**Backtrack Notes:** Purely additive — `image-gen.md` is documentation, the sprite photos are cached scrape output reproducible by re-running `image-scripts/4_images.py`. Nothing else in the repo reads `image-gen.md` or depends on it existing.

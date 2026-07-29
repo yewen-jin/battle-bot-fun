@@ -1,10 +1,98 @@
 {
+  "Bloodsport": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/c/c9/Bloodsport_Pro_League_2026.png/revision/latest?cb=20260601170732",
+    "file": "sprites/source/Bloodsport.png"
+  },
+  "Cobalt": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/c/ce/Cobalt_Pro_League_2026.png/revision/latest?cb=20260601170733",
+    "file": "sprites/source/Cobalt.png"
+  },
+  "Copperhead": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/b/bc/Copperhead_Pro_League_2026.png/revision/latest?cb=20260601170726",
+    "file": "sprites/source/Copperhead.png"
+  },
+  "DeathRoll": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/d/d8/DeathRoll_Pro_League_2026.png/revision/latest?cb=20260601170734",
+    "file": "sprites/source/DeathRoll.png"
+  },
+  "Disarray": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/0/06/Disarray_Pro_League.png/revision/latest?cb=20260628124510",
+    "file": "sprites/source/Disarray.png"
+  },
+  "End Game": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/6/65/End_Game_Pro_League_2026.png/revision/latest?cb=20260601170732",
+    "file": "sprites/source/End_Game.png"
+  },
+  "Golden Fury": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/2/2d/Golden_Fury_Pro_League_2026.png/revision/latest?cb=20260601170732",
+    "file": "sprites/source/Golden_Fury.png"
+  },
+  "HUGE": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/3/39/HUGE_Pro_League_2026.png/revision/latest?cb=20260601170732",
+    "file": "sprites/source/HUGE.png"
+  },
+  "HyperShock": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/3/3c/HyperShock_Pro_League_2026.png/revision/latest?cb=20260601170733",
+    "file": "sprites/source/HyperShock.png"
+  },
+  "JackPot": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/3/3b/JackPot_Pro_League_2026.png/revision/latest?cb=20260601200047",
+    "file": "sprites/source/JackPot.png"
+  },
+  "MadCatter": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/1/12/MadCatter_Pro_League_2026.png/revision/latest?cb=20260601200231",
+    "file": "sprites/source/MadCatter.png"
+  },
+  "Magnitude": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/5/52/Magnitude_Pro_League_2026.png/revision/latest?cb=20260601200150",
+    "file": "sprites/source/Magnitude.png"
+  },
+  "Malice": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/6/63/Malice_BB_Pro_League_2026.png/revision/latest?cb=20260601195739",
+    "file": "sprites/source/Malice.png"
+  },
+  "Manta": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/3/33/Manta_Pro_League_2026.png/revision/latest?cb=20260601191336",
+    "file": "sprites/source/Manta.png"
+  },
   "Minotaur": {
     "source_url": "https://static.wikia.nocookie.net/battlebots/images/1/19/Minotaur_Pro_League_2026.png/revision/latest?cb=20260601191227",
     "file": "sprites/source/Minotaur.png"
   },
+  "Orbitron": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/c/c4/Orbitron_Pro_League_2026.png/revision/latest?cb=20260601191124",
+    "file": "sprites/source/Orbitron.png"
+  },
+  "Ribbot": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/1/1b/Ribbot_Pro_League_2026.png/revision/latest?cb=20260601190901",
+    "file": "sprites/source/Ribbot.png"
+  },
+  "Skorpios": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/2/20/Skorpios_Pro_League_2026.png/revision/latest?cb=20260601195853",
+    "file": "sprites/source/Skorpios.png"
+  },
+  "Switchback": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/8/83/Switchback_Pro_League_2026.png/revision/latest?cb=20260601195942",
+    "file": "sprites/source/Switchback.png"
+  },
+  "Terrortops": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/a/a7/Terrortops_Pro_League_2026.png/revision/latest?cb=20260601190604",
+    "file": "sprites/source/Terrortops.png"
+  },
+  "The Twins": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/7/7d/The_Twins_BB_Pro_League_2026.png/revision/latest?cb=20260601190427",
+    "file": "sprites/source/The_Twins.png"
+  },
   "Tombstone": {
     "source_url": "https://static.wikia.nocookie.net/battlebots/images/8/83/Tombstone_Pro_League_2026.png/revision/latest?cb=20260601190242",
     "file": "sprites/source/Tombstone.png"
+  },
+  "Valkyrie": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/5/50/Valkyrie_BB_Pro_League_2026.png/revision/latest?cb=20260601190127",
+    "file": "sprites/source/Valkyrie.png"
+  },
+  "Witch Doctor": {
+    "source_url": "https://static.wikia.nocookie.net/battlebots/images/e/ed/Witch_Doctor_BB_Pro_League_2026.png/revision/latest?cb=20260601190026",
+    "file": "sprites/source/Witch_Doctor.png"
   }
 }
