@@ -349,3 +349,17 @@ Given (2) confirmed 5 real *text* models were accessible, pivoted to using this 
 **Files Changed:** `physics.js` (`botRadius` 7→20, eye CONFIG values re-proportioned and scaled), `prompts/beats_system.txt` (pacing/beat-count rules rewritten twice), `index.html` + `demo.html` (slider range widening for `botRadius`/eye configs, `<details>`/`<summary>` collapsible panel)
 
 **Backtrack Notes:** All CONFIG changes are live-tunable via the sliders already — no restart needed to experiment further, and the exact prior values are in this entry if a full revert is wanted. The prompt changes are plain text edits to `prompts/beats_system.txt`, trivially revertable. The collapsible-panel markup change is cosmetic only; `#sliders` div (what the script populates) is unchanged, just now living inside a `<details>` instead of directly under `#panel`.
+
+## [T+~112] Collapsed panel now actually frees layout space, not just hides content
+
+**Status:** completed
+
+**Summary:** First collapsible-panel pass (previous entry) only hid the sliders — `#panel`'s fixed `width: 280px` stayed put when collapsed, so the canvas area didn't reclaim any space. Fixed with `#panel:has(> details:not([open])) { width: auto; }` — when the details element inside is closed, the panel shrinks to fit just the "CONFIG (live)" summary text, and `#stage`'s existing `flex: 1` automatically expands the canvas area into the freed width. Applied to both `index.html` and `demo.html`. Added a `transition: width 0.15s ease` so the resize isn't an abrupt jump cut.
+
+**Decisions & Reasoning:**
+- Decision: used CSS `:has()` to key the panel's width off its child's open/closed state, rather than adding JS to toggle a class on `#panel` when the details element's `toggle` event fires.
+  Why: zero JS needed (consistent with why `<details>`/`<summary>` was chosen in the first place), and `:has()` has been broadly supported (Chrome/Safari/Firefox) for long enough that it's a safe default now.
+
+**Files Changed:** `index.html`, `demo.html` (both: `#panel` CSS only)
+
+**Backtrack Notes:** Purely a CSS selector addition — removing the `:has()` rule reverts to the previous (content-hides-but-panel-stays-full-width) behavior with no other side effects.
